@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="touroperator.css" class="rel">
+    <title>О туроператоре</title>
+
+<header>
+    <div class="top-bar">
+        <div class="contacts">Контакты:</div>
+        <div class="phone">+7 (495) 646 75 85</div>
+        <div class="social-icons">
+            <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
+                <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
+            </a>
+            <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
+                <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
+            </a>
+            <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
+                <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
+            </a>
+        </div>
+
+        <!-- Модальное окно предупреждения -->
+        <div id="external-link-warning" class="warning-modal">
+            <div class="warning-content">
+                <h3>⚠️ Внимание!</h3>
+                <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
+                <p>Мы не несём ответственности за содержание внешних сайтов.</p>
+                <div class="warning-buttons">
+                    <button id="cancel-redirect">Остаться</button>
+                    <button id="confirm-redirect">Перейти</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <nav>
+        <ul class="main-menu">
+            <li><a href="index.html">Поиск тура</a></li>
+            <li><a href="countries.html">Страны</a></li>
+            <li><a href="clients.html">Туристам</a></li>
+            <li class="active">О туроператоре</li>
+        </ul>
+
+        <button id="consultation-btn" class="consultation-btn">Консультация</button>
+
+        <div id="consultation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="nameofform">Консультация</h2>
+                <form>
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="submit">Отправить</button>
+                </form>
+                <div id="success-message" style="display: none;">
+                    <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
+                </div>
+            </div>
+        </div>
+        
+    </nav>
+</header>
+</head>
+<body>
+    <div class="main-content">
+        <div class="text-content">
+            <h1>О нашем туроператоре</h1>
+            <p>Мы - команда профессиональных путешественников, которая уже более 15 лет создает незабываемые туры по всему миру.</p>
+            <p>Наша миссия - сделать ваше путешествие идеальным, от момента бронирования до возвращения домой с багажом ярких впечатлений.</p>
+            <p>Мы лично проверяем каждый отель, каждый маршрут и каждого гида, с которым сотрудничаем. Ваш комфорт и безопасность - наш главный приоритет!</p>
+            <p>С нами вы откроете мир по-новому - без скрытых платежей и неожиданных сюрпризов.</p>
+        </div>
+        <div class="image-content">
+            <img src="c8508122e858f558ba0e667be05da52b.jpg" alt="Путешественники">
+        </div>
+    </div>
+    
+    <div class="suitcases">
+        <div class="suitcase-track">
+            <div class="suitcase-item">
+                <img src="фото1.jpeg" alt="фото 1">
+            </div>
+            <div class="suitcase-item">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="фото 2">
+            </div>
+            <div class="suitcase-item">
+                <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="фото3">
+            </div>
+            <div class="suitcase-item">
+                <img src="фото4.jpg" alt="фото 4">
+            </div>
+            <div class="suitcase-item">
+                <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="фото 5">
+            </div>
+            <div class="suitcase-item">
+                <img src="фото6.jpg" alt="фото 6">
+            </div>
+            <div class="suitcase-item">
+                <img src="фото7.webp" alt="фото 7">
+            </div>
+            <div class="suitcase-item">
+                <img src="фото8.jpg" alt="фото 8">
+            </div>
+            <div class="suitcase-item">
+                <img src="фото1.jpeg" alt="фото1">
+            </div>
+        </div>
+    </div>
+    
+    <div class="globe-section">
+        <div class="globe-container">
+            <div id="globe"><img src="b.webp" class="imgballon"></div>
+        </div>
+        <div class="quote">
+            "Мир - это книга. И тот, кто не путешествует, читает только одну страницу."
+            <span class="author">Святой Августин</span>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Туристический оператор "Best Trip". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+</body>
+</html>

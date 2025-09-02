@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристический оператор - Поиск туров</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contacts">Контакты:</div>
+            <div class="phone">+7 (495) 646 75 85</div>
+            <div class="social-icons">
+                <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
+                    <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
+                    <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
+                    <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
+                </a>
+            </div>
+
+            <!-- Модальное окно предупреждения -->
+            <div id="external-link-warning" class="warning-modal">
+                <div class="warning-content">
+                    <h3>⚠️ Внимание!</h3>
+                    <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
+                    <p>Мы не несём ответственности за содержание внешних сайтов.</p>
+                    <div class="warning-buttons">
+                        <button id="cancel-redirect">Остаться</button>
+                        <button id="confirm-redirect">Перейти</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <nav>
+            <ul class="main-menu">
+                <li class="active">Поиск тура</li>
+                <li><a href="countries.html">Страны</a></li>
+                <li><a href="clients.html">Туристам</a></li>
+                <li><a href="touroperetor.html">О туроператоре</a></li>
+            </ul>
+
+            <button id="consultation-btn" class="consultation-btn">Консультация</button>
+
+            <div id="consultation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="nameofform">Консультация</h2>
+                    <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit">Отправить</button>
+                    </form>
+                    <div id="success-message" style="display: none;">
+                        <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>Из Москвы</h1>
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="destination">Курорт</label>
+                    <select id="destination">
+                        <option value="search-country">Выберите страну</option>
+                        <option value="turkey">Турция</option>
+                        <option value="shrilanka">Шри-Ланка</option>
+                        <option value="egypt">Египет</option>
+                        <option value="thailand">Тайланд</option>
+                        <option value="vietnam">Вьетнам</option>
+                        <option value="uae">ОАЭ</option>
+                        <option value="kuba">Куба</option>
+                        <option value="maldivs">Мальдивы</option>
+                        <option value="seishels">Сейшелы</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="departure-date">Дата вылета</label>
+                    <input type="date" id="departure-date" name="departure-date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="comeback-date">Дата возвращения</label>
+                    <input type="date" id="comeback-date" name="comeback-date">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Категория отеля</label>
+                    <select id="category">
+                        <option value="all">Все</option>
+                        <option value="3">3 звезды</option>
+                        <option value="4">4 звезды</option>
+                        <option value="5">5 звезд</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="food">Тип питания</label>
+                    <select id="food">
+                        <option value="all">Все</option>
+                        <option value="breakfast">Только завтрак</option>
+                        <option value="all-inclusive">Все включено</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="adult">Взрослые</label>
+                    <select id="adult">
+                        <option value="0"> 0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="children">Дети</label>
+                    <select id="children">
+                        <option value="0"> 0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+               
+                
+                <div class="form-group">
+                    <button class="search-button">Найти туры</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="promo-section">
+            <video class="promo-video" autoplay muted loop playsinline>
+                <source src="vv.mp4" type="video/mp4">
+            </video>
+            <div class="promo-banner">
+                <h2 id="country-title">ШРИ-ЛАНКА</h2>
+                <p>Новые скидки от отелей до 30%. Туры с прямым перелетом Аэрофлот, а также рейсы других авиакомпаний.</p>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>Категории туров</h2>
+            <div class="categories-grid">
+                <div class="category-item">Новогодние туры</div>
+                <div class="category-item">Свадебные туры</div>
+                <div class="category-item">VIP-туры и услуги</div>
+                <div class="category-item">Отдых на островах</div>
+                <div class="category-item">Морские круизы</div>
+                <div class="category-item">Детский отдых</div>
+                <div class="category-item">Отдых с детьми</div>
+                <div class="category-item">Корпоративный отдых</div>
+                <div class="category-item">Экскурсионные туры</div>
+                <div class="category-item">Пляжный отдых</div>
+                <div class="category-item">Горнолыжные туры</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Туристический оператор "Best Trip". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

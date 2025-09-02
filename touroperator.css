@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+    display: flex;
+    padding: 40px 5%;
+    align-items: center;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.text-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1b358a;
+    text-shadow: 
+      0 0 5px #3498db,
+      0 0 10px #3498db,
+      0 0 20px #3498db;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 100% { opacity: 1; }
+    20% { opacity: 0.8; }
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color:#1e1835;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Бегущие чемоданы */
+.suitcases {
+    background-color: #26e7ce;
+    padding: 30px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.suitcase-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+.suitcase-item {
+    min-width: 200px;
+    margin: 0 15px;
+}
+
+.suitcase-item img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+.globe-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.globe-container {
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+#globe {
+    background-image: url('ballon.webp');
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: pulse 4s infinite ease-in-out;
+    cursor: pointer;
+}
+
+.imgballon{
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.quote {
+    font-style: italic;
+    font-size: 24px;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #352092;
+}
+
+.author {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #2d1f6b;
+}

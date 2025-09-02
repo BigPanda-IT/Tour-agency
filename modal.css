@@ -1,0 +1,90 @@
+.consultation-btn{
+    background-color: rgb(51, 199, 51);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.consultation-btn:hover{
+  background-color: rgb(39, 156, 39);
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    justify-content: center; 
+    align-items: center;
+    top: 50%;  /* Сдвигаем верхний край на 50% вниз */
+    left: 50%; /* Сдвигаем левый край на 50% вправо */
+    width: 30%;
+    transform: translate(-50%, -50%); /* Смещаем назад на половину собственной ширины/высоты */
+  }
+
+.modal-content {
+    background: rgb(175, 245, 239);
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    animation: fadeIn 0.3s;
+    color:rgba(22, 22, 22, 0.945);
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  color: #333; /* Чёрный вместо серого */
+  font-weight: bold; /* Жирный шрифт */
+  font-size: 14px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 36px;
+}
+
+.nameofform{
+    display: flex;
+    justify-content: center; 
+}
+
+.label{
+  color:rgba(22, 22, 22, 0.945);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.submit{
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    background-color: rgb(81, 150, 240);
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer; 
+    position: senter;
+    display: block;   
+    margin: 0 auto;  
+    margin-top: 15px;
+}
+
+  .close {
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристический оператор - Поиск туров</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="countries.html">
+    <link rel="stylesheet" href="countries.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contacts">Контакты:</div>
+            <div class="phone">+7 (495) 646 75 85</div>
+            <div class="social-icons">
+                <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
+                    <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
+                    <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
+                    <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
+                </a>
+            </div>
+
+            <!-- Модальное окно предупреждения -->
+            <div id="external-link-warning" class="warning-modal">
+                <div class="warning-content">
+                    <h3>⚠️ Внимание!</h3>
+                    <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
+                    <p>Мы не несём ответственности за содержание внешних сайтов.</p>
+                    <div class="warning-buttons">
+                        <button id="cancel-redirect">Остаться</button>
+                        <button id="confirm-redirect">Перейти</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Поиск тура</a></li>
+                <li class="active">Страны</li>
+                <li><a href="clients.html">Туристам</a></li>
+                <li><a href="touroperetor.html">О туроператоре</a></li>
+            </ul>
+
+            <button id="consultation-btn" class="consultation-btn">Консультация</button>
+
+            <div id="consultation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="nameofform">Консультация</h2>
+                    <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit">Отправить</button>
+                    </form>
+                    <div id="success-message" style="display: none;">
+                        <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+    </header>
+
+    <main>
+        <div class="country-carousel">
+
+          <div class="country-slide active">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=c8dcdd2f2e725019bd8067154f1c526a_l-4576108-images-thumbs&n=13" alt="Турция">
+            </div>
+            <div class="country-info">
+              <h2>Турция</h2>
+              <p>Турция — это страна, где лазурное море встречается с золотыми пляжами, а древние руины соседствуют с современными курортами. Здесь вас ждут гостеприимные люди, вкуснейшая кухня и незабываемые впечатления — от полёта на воздушном шаре в Каппадокии до расслабленного отдыха в термальных источниках Памуккале. Подарите себе путешествие, полное ярких эмоций и комфорта!</p>
+            </div>
+          </div>
+      
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=5b650240d3c62c916ff707cfdee4af87_l-5452061-images-thumbs&n=13" alt="Шри-Ланка">
+            </div>
+            <div class="country-info">
+              <h2>Шри-Ланка</h2>
+              <p>Шри-Ланка — это тропический рай с бескрайними золотыми пляжами, изумрудными чайными плантациями и древними храмами, скрытыми в густых джунглях. Здесь вас ждут удивительные приключения: от сафари на слонов в национальных парках до серфинга на бирюзовых волнах Индийского океана. Погрузитесь в атмосферу гармонии, вкусите ароматный цейлонский чай и откройте для себя остров, где каждый день дарит новые впечатления! </p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://img.pac.ru/landmarks/471820/big/834A96AC7F0001015BCA88811E791FA4.jpg" alt="Египет">
+            </div>
+            <div class="country-info">
+              <h2>Египет</h2>
+              <p>Египет — это страна, где оживают легенды: величественные пирамиды Гизы, загадочный Сфинкс и сокровища древних фараонов ждут вас! Погрузитесь в кристально чистые воды Красного моря с его яркими коралловыми рифами, а после насладитесь отдыхом в роскошных отелях с видом на бескрайние пески пустыни. Здесь каждый день — это новое приключение, от сафари по Сахаре до прогулок по колоритным базарам Каира!</p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=3cba43a6cc63f28792b9d59035c1d3ed_l-5450477-images-thumbs&n=13" alt="Тайланд">
+            </div>
+            <div class="country-info">
+              <h2>Тайланд</h2>
+              <p>Таиланд — это страна улыбок, где золотые буддийские храмы соседствуют с шумными ночными рынками, а лазурные пляжи — с буйными тропическими джунглями. Здесь вас ждут незабываемые впечатления: от релакса на белоснежных пляжах Пхукета до захватывающих приключений в горах Чиангмая. Насладитесь яркой кухней, теплым гостеприимством и атмосферой вечного праздника!</p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=4593c0ee46f8fd8f1d5f5088641db7be_l-8273955-images-thumbs&n=13" alt="Вьетнам">
+            </div>
+            <div class="country-info">
+              <h2>Вьетнам</h2>
+              <p>Вьетнам — это удивительный микс древних традиций и современной динамики: от шумных улиц Ханоя до безмятежных рисовых террас Сапы и райских пляжей Нячанга. Здесь вас ждут потрясающая кухня с ароматным фо и хрустящими спринг-роллами, завораживающие пейзажи бухты Халонг и колоритные плавучие рынки дельты Меконга. Откройте для себя страну, где каждый уголок — это новое яркое приключение!</p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=b3c61abfeaedde207fc6845ceccea9e9_l-8267821-images-thumbs&n=13" alt="ОАЭ">
+            </div>
+            <div class="country-info">
+              <h2>ОАЭ</h2>
+              <p>ОАЭ — это воплощение роскоши и современных технологий, где сверкающие небоскребы Дубая соседствуют с бескрайними золотыми дюнами пустыни. Здесь вас ждут уникальные развлечения: от шопинга в самых больших торговых центрах мира до сафари по барханам и отдыха на искусственных островах-пальмах. Погрузитесь в атмосферу восточной сказки с комфортом высочайшего уровня! </p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://i.pinimg.com/736x/1c/20/6a/1c206a09493c669e9a55cb774c9b6699.jpg" alt="Куба">
+            </div>
+            <div class="country-info">
+              <h2>Куба</h2>
+              <p>Куба — это карибская мечта, где время замедляет ход: колониальная архитектура Гаваны, винтажные автомобили и ритмы сальсы создают неповторимую атмосферу. Здесь вас ждут нетронутые пляжи Варадеро, плантации лучшего в мире табака и теплое гостеприимство местных жителей. Окунитесь в страстный и яркий мир Кубы, где каждый день — это праздник жизни!  </p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=a36ac0a98d9d3b062f2b0ffcbf5a92a1_l-7053604-images-thumbs&n=13" alt="Мальдивы">
+            </div>
+            <div class="country-info">
+              <h2>Мальдивы</h2>
+              <p>Мальдивы — это рай на земле, где бирюзовые воды Индийского океана сливаются с белоснежными пляжами, а роскошные виллы на сваях дарят уединение и покой. Здесь вас ждут потрясающие рассветы, погружения к красочным коралловым рифам и ужины при свечах прямо у кромки воды. Подарите себе путешествие в мир абсолютной гармонии и безмятежности — на Мальдивах мечты становятся реальностью!</p>
+            </div>
+          </div>
+
+          <div class="country-slide">
+            <div class="country-image">
+              <img src="https://avatars.mds.yandex.net/i?id=f7f5ab8650b927778fc1ccf34d531aaa_l-9242678-images-thumbs&n=13" alt="Сейшелы">
+            </div>
+            <div class="country-info">
+              <h2>Сейшелы</h2>
+              <p>Сейшелы — это воплощение тропической мечты: гигантские гранитные валуны, обрамляющие пляжи с розоватым песком, и кристально чистая вода всех оттенков бирюзы. Здесь вас ждут уникальные заповедники с редкими птицами, уединенные бухты и атмосфера абсолютной гармонии с природой. Райский отдых среди пальм и океанского бриза — именно так вы запомните Сейшелы навсегда! </p>
+            </div>
+          </div>
+      
+          <!-- Навигация -->
+          <button class="carousel-prev">❮</button>
+          <button class="carousel-next">❯</button>
+        </div>
+
+        <div class="stylesbtn">
+            <button class="btn-border-glow">Посмотреть календарь</button>
+        </div>
+
+        <!-- Модальное окно календаря -->
+        <div id="modalgrid" class="modalgrid">
+            <div class="modal-contentgrid">
+                <span class="close">&times;</span>
+                <div class="grid-container">
+
+                    <!-- Январь -->
+                    <div class="grid-item">
+                        <div class="month">Январь</div>
+                        <div class="countries">ОАЭ, Шри-Ланка, Мальдивы, Сейшелы</div>
+                    </div>
+
+                    <!-- Февраль -->
+                    <div class="grid-item">
+                        <div class="month">Февраль</div>
+                        <div class="countries">Таиланд, Вьетнам, ОАЭ, Куба</div>
+                    </div>
+
+                    <!-- Март -->
+                    <div class="grid-item">
+                        <div class="month">Март</div>
+                        <div class="countries">Египет, ОАЭ, Шри-Ланка</div>
+                    </div>
+
+                    <!-- Апрель -->
+                    <div class="grid-item">
+                        <div class="month">Апрель</div>
+                        <div class="countries">Таиланд, Вьетнам, Турция</div>
+
+                    </div>
+                    
+                    <!-- Май -->
+                    <div class="grid-item">
+                        <div class="month">Май</div>
+                        <div class="countries">Турция, Вьетнам, Сейшелы</div>
+                    </div>
+                    
+                    <!-- Июнь -->
+                    <div class="grid-item">
+                        <div class="month">Июнь</div>
+                        <div class="countries">Турция, Египет, Куба</div>
+                    </div>
+                    
+                    <!-- Июль -->
+                    <div class="grid-item">
+                        <div class="month">Июль</div>
+                        <div class="countries">Турция, Куба, Мальдивы</div>
+                    </div>
+                    
+                    <!-- Август -->
+                    <div class="grid-item">
+                        <div class="month">Август</div>
+                        <div class="countries">Турция, ОАЭ, Шри-Ланка</div>
+                    </div>
+                    
+                    <!-- Сентябрь -->
+                    <div class="grid-item">
+                        <div class="month">Сентябрь</div>
+                        <div class="countries">Таиланд, Вьетнам, Сейшелы</div>
+                    </div>
+                    
+                    <!-- Октябрь -->
+                    <div class="grid-item">
+                        <div class="month">Октябрь</div>
+                        <div class="countries">Египет, Шри-Ланка, ОАЭ</div>
+                    </div>
+                    
+                    <!-- Ноябрь -->
+                    <div class="grid-item">
+                        <div class="month">Ноябрь</div>
+                        <div class="countries">Таиланд, Вьетнам, Куба</div>
+                    </div>
+                    
+                    <!-- Декабрь -->
+                    <div class="grid-item">
+                        <div class="month">Декабрь</div>
+                        <div class="countries">Шри-Ланка, Мальдивы, Сейшелы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 Туристический оператор "Best Trip". Все права защищены.</p>
+            </div>
+        </footer>
+
+      <script src="countries.js"></script>
+      <script src="grid.js"></script>
+      <script src="nav.js"></script>
+      <script src="script.js"></script>
+</body>
