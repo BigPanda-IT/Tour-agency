@@ -25,7 +25,7 @@
   }
 
 .modal-content {
-    background: rgb(175, 245, 239);
+    background: rgb(154, 243, 236);
     padding: 20px;
     width: 80%;
     height: 80%;
@@ -39,8 +39,8 @@
   display: block;
   margin-bottom: 8px;
   margin-top: 12px;
-  color: #333; /* Чёрный вместо серого */
-  font-weight: bold; /* Жирный шрифт */
+  color: #333; 
+  font-weight: bold; 
   font-size: 14px;
 }
 
@@ -68,14 +68,18 @@
     color: white;
     padding: 10px;
     font-size: 14px;
-    background-color: rgb(81, 150, 240);
+    background-color: rgb(55, 126, 219);
     border-radius: 10px; 
     border: none; 
     cursor: pointer; 
     position: senter;
     display: block;   
     margin: 0 auto;  
-    margin-top: 15px;
+    margin-top: 25px;
+}
+
+.submit:hover{
+   background-color:rgb(48, 105, 180);
 }
 
   .close {

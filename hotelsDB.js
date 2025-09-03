@@ -1843,6 +1843,9 @@
             document.getElementById('modalRoomDetails').textContent = bookingData.roomDetails;
             document.getElementById('modalRoomPrice').textContent = bookingData.roomPrice;
             
+            // Сохраняем данные о цене в глобальной переменной
+            paymentAmount = bookingData.roomPrice;
+            
             // Показываем модальное окно
             const modal = document.getElementById('bookingModal');
             if (modal) {
@@ -1876,8 +1879,6 @@
                 },
                 timestamp: new Date().toISOString()
             };
-            console.log('Данные бронирования:', bookingData);
-            alert('Бронирование успешно оформлено! С вами свяжутся для подтверждения.');
             closeBookingModal();
             form.reset();
         }
@@ -1928,6 +1929,208 @@
             }, 100);
         });
         
+
+
+        // Функция для перехода ко второму модальному окну
+            function goToSecondModal(bookingData) {
+                // Формируем ФИО из данных
+                const fio = `${bookingData.lastName} ${bookingData.firstName} ${bookingData.middleName || ''}`.trim();
+                
+                // Заполняем данные во втором модальном окне
+                document.getElementById('confirmFio').value = fio;
+                document.getElementById('confirmEmail').value = bookingData.email;
+                
+                // Закрываем первое и открываем второе модальное окно
+                closeBookingModal();
+                showSecondModal();
+            }
+
+            // Функция для показа второго модального окна
+            function showSecondModal() {
+                const modal = document.getElementById('secondModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            // Функция для закрытия второго модального окна
+            function closeSecondModal() {
+                const modal = document.getElementById('secondModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            }
+
+            // Функция для возврата к первому модальному окну
+            function goBackToFirstModal() {
+                closeSecondModal();
+                showBookingModal(lastBookingData); // Нужно сохранить последние данные
+            }
+
+            // Функция для завершения бронирования
+            function completeBooking() {
+                const paymentMethod = document.getElementById('paymentMethod').value;
+                alert(`Бронирование завершено! Способ оплаты: ${paymentMethod === 'card' ? 'Банковская карта' : 'Наличные при заселении'}`);
+                closeSecondModal();
+            }
+
+            // Переменная для хранения последних данных бронирования
+            let lastBookingData = null;
+
+            function processBooking(form) {
+                const formData = new FormData(form);
+                const bookingData = {
+                    lastName: formData.get('lastName'),
+                    firstName: formData.get('firstName'),
+                    middleName: formData.get('middleName'),
+                    birthDate: formData.get('birthDate'),
+                    passportNumber: formData.get('passportNumber'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    comments: formData.get('comments'),
+                    // Сохраняем также данные о номере и цене
+                    roomPrice: document.getElementById('modalRoomPrice').textContent,
+                    roomType: document.getElementById('modalRoomType').textContent,
+                    hotelName: document.getElementById('modalHotelName').textContent
+                };
+    
+                // Сохраняем данные для возможного возврата
+                lastBookingData = bookingData;
+                
+                // Переходим ко второму модальному окну
+                goToSecondModal(bookingData);
+            };
+                
+            //Обработчики событий
+            document.addEventListener('DOMContentLoaded', function() {
+                const bookingForm = document.getElementById('bookingForm');
+                if (bookingForm) {
+                    bookingForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        processBooking(this);
+                    });
+                }
+                
+                // Закрытие второго модального окна по клику вне области
+                const secondModal = document.getElementById('secondModal');
+                if (secondModal) {
+                    secondModal.addEventListener('click', function(e) {
+                        if (e.target === this) {
+                            closeSecondModal();
+                        }
+                    });
+                }
+                
+                // Закрытие по Escape для обоих модальных окон
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        closeBookingModal();
+                        closeSecondModal();
+                    }
+                });
+            });
+
+
+
+        // Глобальная переменная для хранения суммы оплаты
+        let paymentAmount = '';
+        
+        // Функция для перехода к третьему модальному окну
+        function goToThirdModal() {
+            closeSecondModal();
+            showThirdModal();
+            
+            // Используем глобальную переменную paymentAmount
+            if (paymentAmount) {
+                document.getElementById('paymentAmount').textContent = paymentAmount;
+                document.getElementById('payButtonAmount').textContent = paymentAmount.replace('₽', '').trim();
+                document.getElementById('successAmount').textContent = paymentAmount;
+            } else if (lastBookingData && lastBookingData.roomPrice) {
+                // Резервный вариант
+                paymentAmount = lastBookingData.roomPrice;
+                document.getElementById('paymentAmount').textContent = paymentAmount;
+                document.getElementById('payButtonAmount').textContent = paymentAmount.replace('₽', '').trim();
+                document.getElementById('successAmount').textContent = paymentAmount;
+            }
+        }
+        
+        // Функция для показа третьего модального окна
+        function showThirdModal() {
+            const modal = document.getElementById('thirdModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Показываем форму оплаты, скрываем успешный экран
+                document.getElementById('paymentContent').style.display = 'block';
+                document.getElementById('paymentSuccess').style.display = 'none';
+            }
+        }
+
+        function closeThirdModal() {
+            const modal = document.getElementById('thirdModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Функция для обработки оплаты
+        function processPayment() {
+            // Показываем экран успешной оплаты
+            document.getElementById('paymentContent').style.display = 'none';
+            document.getElementById('paymentSuccess').style.display = 'block';
+        }
+        
+        // Обновленная функция completeBooking во втором окне
+        function completeBooking() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            if (paymentMethod === 'card') {
+                // Если выбран способ оплаты картой, переходим к окну оплаты
+                goToThirdModal();
+            } else {
+                // Если выбран наличный расчет, завершаем бронирование
+                alert('Бронирование завершено! Оплата будет произведена наличными в офисе.');
+                closeSecondModal();
+            }
+        }
+        
+        // Обновляем обработчики событий для третьего модального окна
+        document.addEventListener('DOMContentLoaded', function() {
+            // Закрытие третьего модального окна по клику вне области
+            const thirdModal = document.getElementById('thirdModal');
+            if (thirdModal) {
+                thirdModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeThirdModal();
+                    }
+                });
+            }
+
+            // Обработчик для кнопки закрытия в третьем окне
+            const thirdModalClose = document.querySelector('#thirdModal .modal-close');
+            if (thirdModalClose) {
+                thirdModalClose.addEventListener('click', closeThirdModal);
+            }
+            
+            // Обработчик для кнопки "Готово" в успешной оплате
+            const successDoneBtn = document.querySelector('#paymentSuccess .pay-button');
+            if (successDoneBtn) {
+                successDoneBtn.addEventListener('click', closeThirdModal);
+            }
+            
+            // Закрытие по Escape для всех модальных окон
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeBookingModal();
+                    closeSecondModal();
+                    closeThirdModal();
+                }
+            });
+        });
+            
 
         // Вспомогательная функция для генерации карточки отеля
         function generateHotelCard(hotel, searchParams) {

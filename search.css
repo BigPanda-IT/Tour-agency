@@ -251,12 +251,12 @@
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #eee;
-    background-color: #a4d2ff;
+    background-color: #1b1b1b;
 }
 
 .modal-header h2 {
     margin: 0;
-    color: #272727;
+    color: #ffffff;
 }
 
 .modal-close {
@@ -264,23 +264,23 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #383838;
+    color: #ffffff;
 }
 
 .modal-close:hover {
-    color: #000;
+    color: #c9c9c9;
 }
 
 .modal-ccontent {
     padding: 20px;
-    background-color: #89f8fc;
+    background-color: #ffffff;
 }
 
 .booking-info {
     display: block;
     margin-bottom: 20px;
     padding: 15px;
-    background: #f9f9f9;
+    background: #dadada;
     border-radius: 5px;
 }
 
@@ -349,7 +349,7 @@
 .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #c9c9c9;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -368,9 +368,13 @@
     margin-top: 10px;
 }
 
+#secondname {
+    margin-bottom: 30px;
+}
+
 .btn-cancel {
     padding: 10px 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #cacaca;
     background-color: white;
     color: #333;
     border-radius: 5px;
@@ -393,6 +397,175 @@
 .btn-confirm:hover {
     background: #0056b3;
 }
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-order {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.step-indicator {
+    margin-bottom: 20px;
+    width: 100%;;
+}
+
+.step {
+    margin-bottom: 15px;
+}
+
+.step-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c5aa0;
+}
+
+#confirmFio, #confirmEmail {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+
+
+        /* Стили для третьего модального окна */
+        .modal-payment {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .payment-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+        
+        .payment-content {
+            padding: 20px;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        .payment-methodv{
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .img-types-card{
+            width: 140px;
+            height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-types-card img{
+            align-items: center;
+            width: 100%;
+        }
+
+        .summ {
+            margin-top: 5px;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .payment-amount {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .card-input {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .card-input:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+        
+        .card-details {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 13px;
+        }
+        
+        .card-details input {
+            flex: 1;
+        }
+        
+        .pay-button {
+            background-color: #1b1b1b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 0px;
+        }
+        
+        .pay-button:hover {
+            border-color: white;
+        }
+        
+        .payment-success {
+            text-align: center;
+            padding: 30px 20px;
+            color: #202020;
+        }
+        
+        .success-icon {
+            font-size: 50px;
+            color: #4caf50;
+            margin-bottom: 15px;
+        }
+        
+        .success-amount {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #333;
+        }
+        
+        .payment-status {
+            color: #4caf50;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
 
 @media (max-width: 768px) {
     .booking-modal {

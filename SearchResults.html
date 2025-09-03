@@ -141,7 +141,7 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" id="secondname">
                                 <label>Отчество</label>
                                 <input type="text" name="middleName">
                             </div>
@@ -184,6 +184,98 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="modal-overlay" id="secondModal" style="display: none;">
+            <div class="modal-order">
+                <div class="modal-header">
+                    <h2>Подтверждение бронирования</h2>
+                    <button class="modal-close" onclick="closeSecondModal()">&times;</button>
+                </div>
+                <div class="modal-ccontent">
+                    <div class="step-indicator">
+                        <div class="step completed">
+                            <div class="step-text">Контактная информация</div>
+                            <div class="form-group">
+                                <label>ФИО *</label>
+                                <input type="text" id="confirmFio" name="fio" required readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" id="confirmEmail" name="email" required readonly>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Способ оплаты</label>
+                        <select id="paymentMethod" class="form-control">
+                            <option value="card">Банковская карта</option>
+                            <option value="cash">Наличные в офисе</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-cancel" id="prevStep" onclick="goBackToFirstModal()">Назад</button>
+                        <button type="button" class="btn btn-confirm" onclick="completeBooking()">Оплатить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="thirdModal" style="display: none;">
+            <div class="modal-payment">
+                <div class="modal-header">
+                    <h2>Оплата заказа</h2>
+                    <button class="modal-close" onclick="closeThirdModal()">×</button>
+                </div>
+                <div class="payment-content" id="paymentContent">
+                    <div class="payment-methodv">
+                        <div class="summ">
+                            <p>Сумма оплаты</p>
+                            <div class="payment-amount" id="paymentAmount"> ₽</div>
+                        </div>
+                        <div class="img-container">
+                            <div class="img-types-card">
+                                <img src="i.webp" alt="Types of card">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Номер карты</label>
+                        <input type="text" class="card-input" placeholder="0000 0000 0000 0000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Пользователь карты</label>
+                        <input type="text" class="card-input" placeholder="ELENA BONDAREVA">
+                    </div>
+                    
+                    <div class="card-details">
+                        <div class="form-group">
+                            <label>Срок действия</label>
+                            <input type="text" class="card-input" placeholder="ММ / ГГ">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>CVC/CVV</label>
+                            <input type="text" class="card-input" placeholder="***">
+                        </div>
+                    </div>
+                    
+                    <button class="pay-button" onclick="processPayment()">Оплатить <span id="payButtonAmount"></span></button>
+                </div>
+                
+                <!-- Контент успешной оплаты (изначально скрыт) -->
+                <div class="payment-success" id="paymentSuccess" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <div class="success-amount" id="successAmount"></div>
+                    <div>Платеж успешно завершен</div>
+                    <button class="pay-button" onclick="closeThirdModal()" style="margin-top: 20px;">Готово</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>
