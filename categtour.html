@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристический оператор - Поиск туров</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="maptour.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contacts">Контакты:</div>
+            <div class="phone">+7 (495) 646 75 85</div>
+            <div class="social-icons">
+                <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
+                    <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
+                    <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
+                    <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
+                </a>
+            </div>
+
+            <!-- Модальное окно предупреждения -->
+            <div id="external-link-warning" class="warning-modal">
+                <div class="warning-content">
+                    <h3>⚠️ Внимание!</h3>
+                    <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
+                    <p>Мы не несём ответственности за содержание внешних сайтов.</p>
+                    <div class="warning-buttons">
+                        <button id="cancel-redirect">Остаться</button>
+                        <button id="confirm-redirect">Перейти</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <nav>
+            <ul class="main-menu">
+                <li class="active">Поиск тура</li>
+                <li><a href="countries.html">Страны</a></li>
+                <li><a href="clients.html">Туристам</a></li>
+                <li><a href="touroperetor.html">О туроператоре</a></li>
+            </ul>
+
+            <button id="consultation-btn" class="consultation-btn">Консультация</button>
+
+            <div id="consultation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="nameofform">Консультация</h2>
+                    <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit">Отправить</button>
+                    </form>
+                    <div id="success-message" style="display: none;">
+                        <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <div class="constructor-wrapper">
+            <!-- Левая колонка с менюшками -->
+            <div class="menu-column left-column">
+                <div class="form-group">
+                    <label for="accommodation-type">Тип размещения</label>
+                    <select id="accommodation-type" name="accommodation-type">
+                        <option value="">Выберите тип</option>
+                        <option value="hotelfive" data-image="fivestars.png">Отель 5 звезд</option>
+                        <option value="hotelfour" data-image="starsfour.jpg">Отель 4 звезды</option>
+                        <option value="hotelthree" data-image="Three_stars.png">Отель 3 звезды</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="food-type">Питание</label>
+                    <select id="food-type" name="food-type">
+                        <option value="">Выберите питание</option>
+                        <option value="all-inclusive" data-image="https://cache3.youla.io/files/images/720_720_out/5c/60/5c60ba26df53409fa54a7a72.jpg">Все включено</option>
+                        <option value="breakfast" data-image="https://avatars.mds.yandex.net/i?id=122e183a37942cc03f5e1f63773d1ba4_l-10149683-images-thumbs&n=13">Только завтраки</option>
+                        <option value="all" data-image="https://glovo.dhmedia.io/image/stores-glovo/stores/158dbdf4d707c26b89b495b302d876dc80f368408bfd00bc1283b2b16b3c557a?t=W3siYXV0byI6eyJxIjoibG93In19LHsicmVzaXplIjp7Im1vZGUiOiJmaWxsIiwiYmciOiJ0cmFuc3BhcmVudCIsIndpZHRoIjo1ODgsImhlaWdodCI6MzIwfX1d">Завтраки и ужины</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transfer-type">Трансфер</label>
+                    <select id="transfer-type" name="transfer-type">
+                        <option value="">Выберите трансфер</option>
+                        <option value="standard" data-image="https://i.pinimg.com/736x/9d/09/25/9d09253512f2ee908aae169830828bb7.jpg">Стандарт</option>
+                        <option value="vip" data-image="miniven.png">VIP-трансфер</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Центральная сетка 3x2 -->
+            <div class="wish-grid" id="wish-grid">
+                <div class="grid-item pulse" id="item-accommodation" data-type="accommodation">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Размещение</span>
+                </div>
+                <div class="grid-item pulse" id="item-food" data-type="food">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Питание</span>
+                </div>
+                <div class="grid-item pulse" id="item-transfer" data-type="transfer">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Трансфер</span>
+                </div>
+                <div class="grid-item pulse" id="item-duration" data-type="duration">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Количество ночей</span>
+                </div>
+                <div class="grid-item pulse" id="item-people" data-type="people">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Путешественники</span>
+                </div>
+                <div class="grid-item pulse" id="item-room" data-type="room">
+                    <div class="image-container"><img src="key.jpg"></div>
+                    <span class="placeholder">Тип комнаты</span>
+                </div>
+            </div>
+            
+            <!-- Правая колонка с менюшками -->
+            <div class="menu-column right-column">
+                <div class="form-group">
+                    <label for="duration">Количество ночей</label>
+                    <select id="duration" name="duration">
+                        <option value="">Выберите количество</option>
+                        <option value="7-nights" data-image="https://avatars.mds.yandex.net/i?id=5c3dd514e4e7f1f3458ecf4d59b2bc55_l-5257239-images-thumbs&n=13">до 7 ночей</option>
+                        <option value="10-nights" data-image="https://masterpiecer-images.s3.yandex.net/22ad16386f7711eebf043abd0be4d755:upscaled">до 10 ночей</option>
+                        <option value="14-nights" data-image="https://avatars.mds.yandex.net/i?id=b20c074a08aad43d52594fdc592f7edd_l-5233468-images-thumbs&n=13">до 14 ночей</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="people-count">Количество гостей</label>
+                    <select id="people-count" name="people-count">
+                        <option value="">Выберите вариант</option>
+                        <option value="couple" data-image="https://i.pinimg.com/originals/d4/28/69/d42869492212d5734697e5a816867e83.jpg">Пара</option>
+                        <option value="family" data-image="https://avatars.mds.yandex.net/i?id=cf6ecd28bce04a02da59cc84162827d09831e8cd-5275502-images-thumbs&n=13">Взрослые и дети</option>
+                        <option value="friends" data-image="https://avatars.mds.yandex.net/i?id=82bdab137dafbe1dc5d4f68a4e4d3aa080ac995a-5101651-images-thumbs&n=13">Компания друзей</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="room">Подарок</label>
+                    <select id="room" name="room">
+                        <option value="">Выберите подарок</option>
+                        <option value="standart" data-image="https://avatars.mds.yandex.net/i?id=5b6ee0080c004d1e185748a081b3ade7_l-16921284-images-thumbs&n=13">Визит в бассей</option>
+                        <option value="lux" data-image="https://cdn.culture.ru/images/ce40319b-3eb7-5723-b79e-f58655ed6013">Билет в караоке</option>
+                        <option value="all" data-image="https://70.img.avito.st/image/1/1.n8OyzbaDMyrcZdMggMfpp5psMSwMZukj5mYxKApwMyAmYgngBW4.ahl9J3AlqN6PYF5hz4mvFBozvbhHVoSWMgsgEVnVqoU">Сеанс на массаж</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="reset-btn">Очистить</button>
+            <button id="submit-btn">Перейти к поиску</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Туристический оператор "Best Trip". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+    <script src="desiremap.js"></script>
+</body>
+</html>
