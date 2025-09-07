@@ -77,8 +77,6 @@
     flex-shrink: 0;
 }
 
-
-
 /* Анимация движения ленты */
 @keyframes moveStrip {
     0% {
@@ -96,8 +94,6 @@
 .moving-strip.paused {
     animation-play-state: paused;
 }
-
-
 
 .modal-footer {
     text-align: center;

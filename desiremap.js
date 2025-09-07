@@ -1,9 +1,13 @@
-// Получаем параметр категории из URL
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get('category') || 'Путешествие';
+// Получаем категорию из localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const savedCategory = localStorage.getItem('selectedTourCategory');
+    const category = savedCategory || 'Путешествие';
+    
+    // Устанавливаем категорию в заголовок
+    document.getElementById('category-title').textContent = category;
+    console.log('Загружена категория:', category);
+});
 
-// Устанавливаем категорию в заголовок
-document.querySelector('h2').textContent = `Соберите свой тур в ${category}`;
 
 // Объект для хранения выбранных значений
 const selectedOptions = {
@@ -15,7 +19,7 @@ const selectedOptions = {
     transfer: null
 };
 
-// Маппинг ID select'ов к типам данных
+// Маппинг ID селектов к типам данных
 const selectMapping = {
     'accommodation-type': 'accommodation',
     'food-type': 'food',
@@ -25,7 +29,7 @@ const selectMapping = {
     'room': 'room'
 };
 
-// Назначаем обработчики на все select'ы
+// Назначаем обработчики на все селекты
 document.querySelectorAll('select').forEach(select => {
     select.addEventListener('change', (e) => {
         const selectId = e.target.id;
@@ -66,7 +70,7 @@ function updateGridItem(type, text, imageUrl) {
         const img = document.createElement('img');
         img.src = imageUrl;
         img.alt = text;
-        img.style.display = 'block'; // Исправляем display: none
+        img.style.display = 'block'; 
         imageContainer.appendChild(img);
         
         // Обновляем текст
@@ -77,9 +81,9 @@ function updateGridItem(type, text, imageUrl) {
     }
 }
 
-// Кнопка сброса (упрощенная версия)
+// Кнопка сброса
 document.getElementById('reset-btn').addEventListener('click', () => {
-    // Сбрасываем select'ы
+    // Сбрасываем селекты
     document.querySelectorAll('select').forEach(select => {
         select.selectedIndex = 0;
     });
@@ -130,6 +134,9 @@ function getPlaceholderText(type) {
 
 // Кнопка отправки
 document.getElementById('submit-btn').addEventListener('click', () => {
+
+    const currentCategory = document.getElementById('category-title').textContent;
+
     // Проверяем, все ли поля заполнены
     const allFilled = Object.values(selectedOptions).every(value => value !== null);
     
@@ -137,14 +144,9 @@ document.getElementById('submit-btn').addEventListener('click', () => {
         alert('Пожалуйста, заполните все параметры вашего путешествия!');
         return;
     }
-    
-    // Здесь можно отправить данные на сервер или перейти к результатам
-    console.log('Выбранные параметры:', selectedOptions);
-    alert('Ищем лучшие варианты для вас!');
-    
     // Пример перенаправления на страницу с результатами
     const queryParams = {
-        category: category,
+        category: currentCategory,
         ...Object.fromEntries(
             Object.entries(selectedOptions).map(([key, value]) => [key, value.value])
         )
@@ -152,7 +154,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     
     const queryString = new URLSearchParams(queryParams).toString();
     console.log('Query string:', queryString);
-    // window.location.href = `results.html?${queryString}`;
+    window.location.href = `results.html?${queryString}`;
 });
 
 // Предзагрузка изображений для плавного отображения

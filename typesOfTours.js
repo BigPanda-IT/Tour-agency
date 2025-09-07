@@ -168,6 +168,21 @@ function openModal(categoryName) {
     document.body.style.overflow = 'hidden';
 }
 
+// Обработчик для кнопки "Узнать подробнее"
+modalLink.addEventListener('click', function(e) {
+    // Получаем актуальное название категории из модального окна
+    const currentCategory = modalTitle.textContent;
+    
+    // Сохраняем в localStorage
+    localStorage.setItem('selectedTourCategory', currentCategory);
+    
+    console.log('Сохранена категория:', currentCategory);
+    
+    // Продолжаем стандартное поведение ссылки
+    return true;
+});
+
+
 // Функция закрытия модального окна
 function closeModal() {
     // Останавливаем анимацию перед закрытием
@@ -211,3 +226,4 @@ document.addEventListener('visibilitychange', () => {
         movingStrip.classList.remove('paused');
     }
 });
+
