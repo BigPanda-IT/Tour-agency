@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="touroperator.css" class="rel">
+    <link rel="stylesheet" href="modal.css">
     <title>О туроператоре</title>
 
 <header>
@@ -51,26 +51,26 @@
 
         <button id="consultation-btn" class="consultation-btn">Консультация</button>
 
-        <div id="consultation-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 class="nameofform">Консультация</h2>
-                <form>
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <button type="submit" class="submit">Отправить</button>
-                </form>
-                <div id="success-message" style="display: none;">
-                    <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
+            <div id="consultation-modal" class="modal">
+                <div class="modal-content">
+                    <div class="nametitle">
+                        <h2 class="nameofform">Консультация</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <form class="styleforform">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit">Отправить</button>
+                    </form>
+                    <div id="success-message" style="display: none;"></div>
                 </div>
             </div>
-        </div>
         
     </nav>
 </header>

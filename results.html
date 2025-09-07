@@ -55,9 +55,11 @@
 
             <div id="consultation-modal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2 class="nameofform">Консультация</h2>
-                    <form>
+                    <div class="nametitle">
+                        <h2 class="nameofform">Консультация</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <form class="styleforform">
                     <div class="form-group">
                         <label for="name">Имя</label>
                         <input type="text" id="name" required>
@@ -68,9 +70,7 @@
                     </div>
                     <button type="submit" class="submit">Отправить</button>
                     </form>
-                    <div id="success-message" style="display: none;">
-                        <p style="color: green; text-align: center; font-weight: bold;">Отправлено!</p>
-                    </div>
+                    <div id="success-message" style="display: none;"></div>
                 </div>
             </div>
             
