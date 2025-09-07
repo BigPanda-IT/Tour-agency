@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector("#consultation-modal form");
     
     const successMessage = document.createElement('div');
-    successMessage.innerHTML = '<p style="color: green; text-align: center; font-weight: bold; margin-top: 20px;">Отправлено!</p>';
+    successMessage.innerHTML = '<p style="color: green; text-align: center; font-weight: bold; margin: 40px;">Отправлено!</p>';
     successMessage.style.display = 'none';
     modal.querySelector('.modal-content').appendChild(successMessage);
 
@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = "none";
         }, 5000);
     });
+
+
+    
 
     const countries = ["ШРИ-ЛАНКА", "ТАИЛАНД", "СЕЙШЕЛЫ", "МАЛЬДИВЫ", "ВЬЕТНАМ", "ТУРЦИЯ", "ОАЭ", "ЕГИПЕТ", "КУБА"];
     const titleElement = document.getElementById("country-title");

@@ -13,55 +13,80 @@
 }
 
 .modal {
-    display: none;
-    position: fixed; 
-    z-index: 1000; 
-    justify-content: center; 
-    align-items: center;
-    top: 50%;  /* Сдвигаем верхний край на 50% вниз */
-    left: 50%; /* Сдвигаем левый край на 50% вправо */
-    width: 30%;
-    transform: translate(-50%, -50%); /* Смещаем назад на половину собственной ширины/высоты */
-  }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  box-sizing: border-box;
+  display: none;
+}
 
 .modal-content {
-    background: rgb(154, 243, 236);
-    padding: 20px;
-    width: 80%;
-    height: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    animation: fadeIn 0.3s;
-    color:rgba(22, 22, 22, 0.945);
+  background: white;
+  border-radius: 10px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 .modal-content label {
   display: block;
-  margin-bottom: 8px;
-  margin-top: 12px;
+  margin-bottom: 13px;
+  margin-top: 8px;
   color: #333; 
   font-weight: bold; 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .modal-content input {
-  width: 100%;
-  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
   height: 36px;
+  width: 100%;
+}
+
+.nametitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #1b1b1b;
 }
 
 .nameofform{
-    display: flex;
-    justify-content: center; 
+  margin: 0;
+  color: #ffffff;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.close:hover {
+  color: #c9c9c9;
 }
 
 .label{
   color:rgba(22, 22, 22, 0.945);
   font-size: 16px;
-  margin-top: 10px;
+}
+
+.styleforform{
+  padding: 20px;
 }
 
 .submit{
@@ -82,13 +107,7 @@
    background-color:rgb(48, 105, 180);
 }
 
-  .close {
-    float: right;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
