@@ -81,6 +81,44 @@ function updateGridItem(type, text, imageUrl) {
     }
 }
 
+
+const modalForWarning = document.getElementById('modalforwarning');
+const modalMessage = document.getElementById('modal-message');
+const modalClose = document.querySelector('.closeofwarningwindow');
+const modalOkBtn = document.getElementById('modal-ok-btn');
+
+// Функция показа модального окна с ошибкой
+function showErrorModal() {
+    modalMessage.textContent = 'Пожалуйста, заполните все параметры вашего путешествия!';
+    modalForWarning.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+}
+
+// Функция скрытия модального окна
+function hideErrorModal() {
+    modalForWarning.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Восстанавливаем прокрутку
+}
+
+// Обработчики событий для модального окна
+modalClose.addEventListener('click', hideErrorModal);
+modalOkBtn.addEventListener('click', hideErrorModal);
+
+// Закрытие модального окна при клике вне его области
+window.addEventListener('click', (event) => {
+    if (event.target === modalForWarning) {
+        hideErrorModal();
+    }
+});
+
+// Закрытие модального окна по клавише Escape
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modalForWarning.style.display === 'block') {
+        hideErrorModal();
+    }
+});
+
+
 // Кнопка сброса
 document.getElementById('reset-btn').addEventListener('click', () => {
     // Сбрасываем селекты
@@ -141,7 +179,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     const allFilled = Object.values(selectedOptions).every(value => value !== null);
     
     if (!allFilled) {
-        alert('Пожалуйста, заполните все параметры вашего путешествия!');
+        showErrorModal();
         return;
     }
     // Пример перенаправления на страницу с результатами
