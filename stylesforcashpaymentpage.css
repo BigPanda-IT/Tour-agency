@@ -1,29 +1,27 @@
 .confirmation-container {
-    max-width: 600px;
-    margin: 50px auto;
+    width: 1000px;
+    margin: 20px auto;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 .confirmation-header {
     text-align: center;
     color: #28a745;
-    margin-bottom: 30px;
+    font-size: 16px;
 }
 .confirmation-details {
     margin: 25px 0;
 }
 .confirmation-details p {
-    margin: 12px 0;
-    padding: 8px 0;
+    margin: 6px 0;
     border-bottom: 1px solid #eee;
 }
 .confirmation-footer {
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 15px;
+    padding-top: 12px;
     border-top: 2px solid #28a745;
-    text-align: center;
     color: #666;
 }
 .print-btn {
@@ -33,5 +31,70 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    font-size: 18px;
+    display: block;
+    margin: 20px auto 0 auto;
 }
+
+/* СТИЛИ ДЛЯ ПЕЧАТИ */
+@media print {
+    /* Скрываем всё ненужное */
+    nav, footer, header, .print-btn, .modal-close, 
+    .no-print, .navigation, .navbar, .footer {
+        display: none !important;
+    }
+    
+    /* Базовые настройки страницы */
+    body {
+        padding: 0mm !important;
+        margin: 0mm !important;
+        background: white !important;
+        font-size: 12pt !important;
+        width: 100% !important;
+    }
+    
+    /* Уменьшаем заголовок */
+    .confirmation-header h1 {
+        font-size: 18pt !important; 
+        color: black !important; 
+        text-align: center !important;
+        margin-bottom: 10px !important;
+    }
+    
+    /* Контейнер для печати */
+    .confirmation-container {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        padding: 10mm !important;
+        margin: 0mm !important;
+        width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    * {
+        color: black !important;
+        background: white !important;
+    }
+    
+    /* Улучшаем читаемость текста */
+    .confirmation-details p {
+        font-size: 11pt !important;
+        margin: 8px 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Настройки страницы */
+    @page {
+        size: A4 portrait;
+        margin: 15mm;
+    }
+    
+    /* Предотвращаем разрывы */
+    .confirmation-details {
+        page-break-inside: avoid;
+    }
+}
+
+
+
+    

@@ -80,7 +80,7 @@
     <main>
         <div class="confirmation-container">
             <div class="confirmation-header">
-                <h1>✅ Подтверждение бронирования</h1>
+                <h1>✓ Подтверждение бронирования</h1>
             </div>
             
             <div class="confirmation-details" id="bookingDetails">
@@ -88,8 +88,7 @@
             </div>
             
             <div class="confirmation-footer">
-                <p>Пожалуйста, сохраните этот документ</p>
-                <p>Предъявите его при оплате в офисе</p>
+                <p>Пожалуйста, сохраните этот документ. Предъявите его при оплате в офисе.</p>
                 <button class="print-btn" onclick="window.print()">Распечатать</button>
             </div>
         </div>
@@ -104,29 +103,6 @@
 
     <script src="nav.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Получаем данные из sessionStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookingData = JSON.parse(sessionStorage.getItem('bookingData'));
-            
-            if (bookingData) {
-                // Вставляем данные в HTML
-                document.getElementById('bookingDetails').innerHTML = `
-                    <p><strong>Отель:</strong> ${bookingData.hotelName}</p>
-                    <p><strong>Номер:</strong> ${bookingData.roomType}</p>
-                    <p><strong>Сумма к оплате:</strong> ${bookingData.amount}</p>
-                    <p><strong>Способ оплаты:</strong> Наличные в офисе</p>
-                    <p><strong>Статус:</strong> Ожидает оплаты</p>
-                    <p><strong>Дата бронирования:</strong> ${bookingData.date}</p>
-                `;
-                
-                // Очищаем storage после использования
-                sessionStorage.removeItem('bookingData');
-            } else {
-                document.getElementById('bookingDetails').innerHTML = 
-                    '<p style="color: red; text-align: center;">Данные бронирования не найдены</p>';
-            }
-        });
-    </script>
+    <script src="recipy.js"></script>
 </body>
 </html>

@@ -528,7 +528,7 @@ function printBooking() {
     window.open('cashpayment.html', '_blank');
 }
 
-// Функция для завершения бронирования (ваша существующая функция)
+// Функция для завершения бронирования (существующая функция)
 function completeBooking() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     if (paymentMethod === 'card') {
@@ -568,14 +568,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
-// Функция для перехода к модальному окну с сообщением об оплате наличными
-function goToThirdModal() {
-    closeSecondModal();
-    showCashModal();
-}
-
 
 // Функция для перехода к третьему модальному окну
 function goToThirdModal() {
