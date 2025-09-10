@@ -218,6 +218,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal-overlay" id="cashModal" style="display: none;">
+                <div class="modal-cash">
+                    <div class="modal-header">
+                        <h2>Бронирование завершено!</h2>
+                        <button class="modal-close" onclick="closeCashModal()">×</button>
+                    </div>
+                    <div class="modal-content">
+                        <div class="success-icon">✓</div>
+                        <div class="success-message">
+                            <h3>Ваше бронирование подтверждено</h3>
+                            <p>Оплата будет произведена наличными в офисе</p>
+                            <div class="booking-details">
+                                <p><strong>Сумма к оплате:</strong> <span id="cashAmount"></span></p>
+                                <p><strong>Способ оплаты:</strong> Наличные в офисе</p>
+                                <p><strong>Статус:</strong> Ожидает оплаты</p>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-done" onclick="closeCashModal()">Готово</button>
+                            <button class="btn-secondary" onclick="printBooking()">Распечатать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     
             <div class="modal-overlay" id="thirdModal" style="display: none;">
                 <div class="modal-payment">

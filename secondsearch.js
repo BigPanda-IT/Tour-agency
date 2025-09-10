@@ -490,17 +490,92 @@ function closeSecondModal() {
     }
 }
 
-// Функция для завершения бронирования
+
+// Функция для показа модального окна с наличной оплатой
+function showCashModal() {
+    const modal = document.getElementById('cashModal');
+    if (modal) {
+        // Заполняем сумму оплаты
+        document.getElementById('cashAmount').textContent = window.paymentAmount || '0 руб';
+        
+        // Показываем модальное окно
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Функция для закрытия модального окна с наличной оплатой
+function closeCashModal() {
+    const modal = document.getElementById('cashModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+function printBooking() {
+    // Сохраняем данные в sessionStorage
+    const bookingData = {
+        hotelName: document.getElementById('modalHotelName').textContent,
+        roomType: document.getElementById('modalRoomType').textContent,
+        amount: window.paymentAmount,
+        date: new Date().toLocaleDateString('ru-RU')
+    };
+    
+    sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
+    
+    // Открываем страницу cashpayment.html
+    window.open('cashpayment.html', '_blank');
+}
+
+// Функция для завершения бронирования (ваша существующая функция)
 function completeBooking() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     if (paymentMethod === 'card') {
         // Переходим к оплате картой
         goToThirdModal();
     } else {
-        alert('Бронирование завершено! Оплата будет произведена наличными в офисе.');
-        closeSecondModal();
+        // Показываем модальное окно для наличной оплаты
+        goToCashModal();
     }
 }
+
+// Функция перехода к модальному окну с наличной оплатой
+function goToCashModal() {
+    // Закрываем текущее модальное окно
+    closeSecondModal();
+    
+    // Показываем модальное окно с наличной оплатой
+    showCashModal();
+}
+
+// Добавьте обработчики событий для модального окна
+document.addEventListener('DOMContentLoaded', function() {
+    // Закрытие по клику вне области
+    const cashModal = document.getElementById('cashModal');
+    if (cashModal) {
+        cashModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCashModal();
+            }
+        });
+    }
+    
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeCashModal();
+        }
+    });
+});
+
+
+// Функция для перехода к модальному окну с сообщением об оплате наличными
+function goToThirdModal() {
+    closeSecondModal();
+    showCashModal();
+}
+
 
 // Функция для перехода к третьему модальному окну
 function goToThirdModal() {
