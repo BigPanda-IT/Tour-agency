@@ -2,6 +2,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 10px;
 }
 
 .logo {
@@ -176,7 +177,8 @@
     margin: 10px 0;
 }
 
-.book-btn {
+.book-btn,
+.bookingbutton {
     background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
     color: white;
     border: none;
@@ -189,6 +191,10 @@
 }
 
 .book-btn:hover {
+    opacity: 0.9;
+}
+
+.bookingbutton:hover {
     opacity: 0.9;
 }
 
@@ -504,7 +510,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 12px 15px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 16px;
         }
         
@@ -563,6 +569,18 @@
             color: #4caf50;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 0px;
+            display: none;
+        }
+        
+        .card-input.error {
+            border-color: #ff4444;
         }
 
 

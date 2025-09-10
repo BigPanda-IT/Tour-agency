@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="CategoriesOfTours.css">
+    <link rel="stylesheet" href="search.css" class="rel">
+
 </head>
 
 <body>
@@ -78,8 +79,204 @@
     </header>
 
     <main>
-        
+        <div class="container">
+            <div class="header-info">Результаты подбора туров</div>
+            
+            <div class="search-params">
+                <h2>Выбранные параметры</h2>
+                <div class="param-grid" id="search-params">
+                    <!-- Параметры будут здесь -->
+                </div>
+            </div>
+            
+            <div class="results-header">
+                <div class="results-count" id="results-count">Найдено отелей: 0</div>
+            </div>
+            
+            <div id="hotels-results">
+                <!-- Результаты будут здесь -->
+            </div>
 
+            <div class="booking-modal-overlay" id="bookingModal" style="display: none;">
+                <div class="booking-modal">
+                    <div class="modal-header">
+                        <h2>Оформление бронирования</h2>
+                        <button class="modal-close" onclick="closeBookingModal()">×</button>
+                    </div>
+                    
+                    <div class="modal-ccontent">
+                        <div class="modal-body">
+                            <div class="booking-info">
+                                <div class="hotel-preview">
+                                    <img id="modalHotelImage" src="" alt="">
+                                    <div class="hotel-details">
+                                        <h3 id="modalHotelName"></h3>
+                                        <p id="modalHotelLocation"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="room-info">
+                                    <h4>Выбранный номер</h4>
+                                    <p><strong>Тип номера:</strong> <span id="modalRoomType"></span></p>
+                                    <p><strong>Вместимость:</strong> <span id="modalRoomDetails"></span></p>
+                                    <p><strong>Стоимость:</strong> <span id="modalRoomPrice"></span></p>
+                                </div>
+                            </div>
+                            
+                            <form class="booking-form" id="bookingForm">
+                                <h3>Данные туриста</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Фамилия *</label>
+                                        <input type="text" name="lastName" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Имя *</label>
+                                        <input type="text" name="firstName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group" id="secondname">
+                                    <label>Отчество</label>
+                                    <input type="text" name="middleName">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Дата рождения *</label>
+                                        <input type="date" name="birthDate" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Номер паспорта *</label>
+                                        <input type="text" name="passportNumber" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Email *</label>
+                                        <input type="email" name="email" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Телефон *</label>
+                                        <input type="tel" name="phone" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Комментарий к бронированию</label>
+                                    <textarea name="comments" rows="3" placeholder="Особые пожелания или комментарии"></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn-cancel" onclick="closeBookingModal()">Отмена</button>
+                                    <button type="submit" class="btn-confirm">Следующий шаг ⟶</button>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="modal-overlay" id="secondModal" style="display: none;">
+                <div class="modal-order">
+                    <div class="modal-header">
+                        <h2>Подтверждение бронирования</h2>
+                        <button class="modal-close" onclick="closeSecondModal()">&times;</button>
+                    </div>
+                    <div class="modal-ccontent">
+                        <div class="step-indicator">
+                            <div class="step completed">
+                                <div class="step-text">Контактная информация</div>
+                                <div class="form-group">
+                                    <label>ФИО *</label>
+                                    <input type="text" id="confirmFio" name="fio" required readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" id="confirmEmail" name="email" required readonly>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paymentMethod">Способ оплаты</label>
+                            <select id="paymentMethod" class="form-control">
+                                <option value="card">Банковская карта</option>
+                                <option value="cash">Наличные в офисе</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-cancel" id="prevStep" onclick="goBackToFirstModal()">Назад</button>
+                            <button type="button" class="btn btn-confirm" onclick="completeBooking()">Оплатить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="modal-overlay" id="thirdModal" style="display: none;">
+                <div class="modal-payment">
+                    <div class="modal-header">
+                        <h2>Оплата заказа</h2>
+                        <button class="modal-close" onclick="closeThirdModal()">×</button>
+                    </div>
+                    <div class="payment-content" id="paymentContent">
+                        <div class="payment-methodv">
+                            <div class="summ">
+                                <p>Сумма оплаты</p>
+                                <div class="payment-amount" id="paymentAmount"> ₽</div>
+                            </div>
+                            <div class="img-container">
+                                <div class="img-types-card">
+                                    <img src="i.webp" alt="Types of card">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Номер карты</label>
+                            <input type="text" class="card-input" placeholder="0000 0000 0000 0000" required id="cardNumber">
+                            <div class="error-message" id="cardNumberError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Пользователь карты</label>
+                            <input type="text" class="card-input" placeholder="ELENA BONDAREVA" required id="cardHolder">
+                            <div class="error-message" id="cardHolderError"></div>
+                        </div>
+                        
+                        <div class="card-details">
+                            <div class="form-group">
+                                <label>Срок действия</label>
+                                <input type="text" class="card-input" placeholder="ММ / ГГ" required id="expiryDate">
+                                <div class="error-message" id="expiryDateError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>CVC/CVV</label>
+                                <input type="text" class="card-input" placeholder="***" required id="cvcCode">
+                                <div class="error-message" id="cvcCodeError"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="pay-button" onclick="processPayment()">Оплатить <span id="payButtonAmount"></span></button>
+                    </div>
+                    
+                    <!-- Контент успешной оплаты (изначально скрыт) -->
+                    <div class="payment-success" id="paymentSuccess" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <div class="success-amount" id="successAmount"></div>
+                        <div>Платеж успешно завершен</div>
+                        <button class="pay-button" onclick="closeThirdModal()" style="margin-top: 20px;">Готово</button>
+                    </div>
+                </div>
+            </div>
+    
     </main>
 
     <footer>
@@ -90,5 +287,7 @@
 
     <script src="nav.js"></script>
     <script src="script.js"></script>
+    <script src="secondsearch.js"></script>
+
 </body>
 </html>

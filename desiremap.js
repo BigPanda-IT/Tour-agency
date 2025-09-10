@@ -15,7 +15,7 @@ const selectedOptions = {
     food: null,
     duration: null,
     people: null,
-    room: null,
+    gift: null,
     transfer: null
 };
 
@@ -26,7 +26,7 @@ const selectMapping = {
     'transfer-type': 'transfer',
     'duration': 'duration',
     'people-count': 'people',
-    'room': 'room'
+    'gift': 'gift'
 };
 
 // Назначаем обработчики на все селекты
@@ -164,7 +164,7 @@ function getPlaceholderText(type) {
         accommodation: 'Размещение',
         food: 'Питание',
         people: 'Путешественники',
-        room: 'Тип комнаты',
+        gift: 'Подарок',
         transfer: 'Трансфер'
     };
     return placeholders[type] || 'Выберите опцию';
@@ -172,7 +172,6 @@ function getPlaceholderText(type) {
 
 // Кнопка отправки
 document.getElementById('submit-btn').addEventListener('click', () => {
-
     const currentCategory = document.getElementById('category-title').textContent;
 
     // Проверяем, все ли поля заполнены
@@ -182,17 +181,18 @@ document.getElementById('submit-btn').addEventListener('click', () => {
         showErrorModal();
         return;
     }
-    // Пример перенаправления на страницу с результатами
-    const queryParams = {
+
+    // Сохраняем ВСЕ данные для results.html
+    const tourData = {
         category: currentCategory,
-        ...Object.fromEntries(
-            Object.entries(selectedOptions).map(([key, value]) => [key, value.value])
-        )
+        options: selectedOptions
     };
     
-    const queryString = new URLSearchParams(queryParams).toString();
-    console.log('Query string:', queryString);
-    window.location.href = `results.html?${queryString}`;
+    console.log('Сохраняем в sessionStorage:', tourData);
+    sessionStorage.setItem('tourConstructionData', JSON.stringify(tourData));
+    
+    // Перенаправляем
+    window.location.href = `results.html`;
 });
 
 // Предзагрузка изображений для плавного отображения

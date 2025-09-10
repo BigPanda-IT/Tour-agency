@@ -2031,11 +2031,6 @@
                     }
                 });
             });
-
-
-
-        // Глобальная переменная для хранения суммы оплаты
-        let paymentAmount = '';
         
         // Функция для перехода к третьему модальному окну
         function goToThirdModal() {
@@ -2056,33 +2051,264 @@
             }
         }
         
-        // Функция для показа третьего модального окна
-        function showThirdModal() {
-            const modal = document.getElementById('thirdModal');
-            if (modal) {
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                
-                // Показываем форму оплаты, скрываем успешный экран
-                document.getElementById('paymentContent').style.display = 'block';
-                document.getElementById('paymentSuccess').style.display = 'none';
-            }
-        }
+        // Глобальная переменная для хранения суммы оплаты
+let paymentAmount = '';
 
-        function closeThirdModal() {
-            const modal = document.getElementById('thirdModal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
+// Функция для показа третьего модального окна
+function showThirdModal() {
+    const modal = document.getElementById('thirdModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Показываем форму оплаты, скрываем успешный экран
+        document.getElementById('paymentContent').style.display = 'block';
+        document.getElementById('paymentSuccess').style.display = 'none';
+        
+        // Сбрасываем форму и ошибки
+        resetPaymentForm();
+    }
+}
+
+// Функция для сброса формы оплаты
+function resetPaymentForm() {
+    const form = document.getElementById('paymentForm');
+    if (form) {
+        form.reset();
+    }
+    
+    // Скрываем все сообщения об ошибках
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => {
+        msg.style.display = 'none';
+    });
+    
+    // Убираем классы ошибок с полей
+    const inputs = document.querySelectorAll('.card-input');
+    inputs.forEach(input => {
+        input.classList.remove('error');
+    });
+}
+
+// Функция для отображения ошибки
+function showError(inputId, message) {
+    const input = document.getElementById(inputId);
+    const errorElement = document.getElementById(inputId + 'Error');
+    
+    if (input && errorElement) {
+        input.classList.add('error');
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+}
+
+// Функция для скрытия ошибки
+function hideError(inputId) {
+    const input = document.getElementById(inputId);
+    const errorElement = document.getElementById(inputId + 'Error');
+    
+    if (input && errorElement) {
+        input.classList.remove('error');
+        errorElement.style.display = 'none';
+    }
+}
+
+// Функция для валидации номера карты
+function validateCardNumber(cardNumber) {
+    // Удаляем все пробелы
+    const cleaned = cardNumber.replace(/\s+/g, '');
+    
+    // Проверяем, что только цифры и длина 16
+    if (!/^\d{16}$/.test(cleaned)) {
+        return false;
+    }
+    
+    // Проверяем алгоритм Луна
+    let sum = 0;
+    let shouldDouble = false;
+    
+    for (let i = cleaned.length - 1; i >= 0; i--) {
+        let digit = parseInt(cleaned.charAt(i));
+        
+        if (shouldDouble) {
+            digit *= 2;
+            if (digit > 9) {
+                digit -= 9;
             }
         }
         
-        // Функция для обработки оплаты
-        function processPayment() {
-            // Показываем экран успешной оплаты
-            document.getElementById('paymentContent').style.display = 'none';
-            document.getElementById('paymentSuccess').style.display = 'block';
-        }
+        sum += digit;
+        shouldDouble = !shouldDouble;
+    }
+    
+    return sum % 10 === 0;
+}
+
+// Функция для валидации срока действия
+function validateExpiryDate(expiryDate) {
+    const pattern = /^(0[1-9]|1[0-2])\s?\/\s?([0-9]{2})$/;
+    if (!pattern.test(expiryDate)) {
+        return false;
+    }
+    
+    const [month, year] = expiryDate.split('/').map(part => part.trim());
+    const now = new Date();
+    const currentYear = now.getFullYear() % 100;
+    const currentMonth = now.getMonth() + 1;
+    
+    if (parseInt(year) < currentYear) {
+        return false;
+    }
+    
+    if (parseInt(year) === currentYear && parseInt(month) < currentMonth) {
+        return false;
+    }
+    
+    return true;
+}
+
+// Функция для валидации CVC/CVV
+function validateCVC(cvc) {
+    return /^\d{3,4}$/.test(cvc);
+}
+
+// Функция для валидации имени владельца карты
+function validateCardHolder(name) {
+    return name.trim().length >= 3 && /^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name);
+}
+
+// Функция для обработки оплаты
+function processPayment() {
+    // Получаем значения полей
+    const cardNumber = document.getElementById('cardNumber').value;
+    const cardHolder = document.getElementById('cardHolder').value;
+    const expiryDate = document.getElementById('expiryDate').value;
+    const cvcCode = document.getElementById('cvcCode').value;
+    
+    // Сбрасываем предыдущие ошибки
+    hideError('cardNumber');
+    hideError('cardHolder');
+    hideError('expiryDate');
+    hideError('cvcCode');
+    
+    // Валидация полей
+    let isValid = true;
+    
+    // Валидация номера карты
+    if (!cardNumber.trim()) {
+        showError('cardNumber', 'Номер карты обязателен для заполнения');
+        isValid = false;
+    } else if (!validateCardNumber(cardNumber)) {
+        showError('cardNumber', 'Некорректный номер карты');
+        isValid = false;
+    }
+    
+    // Валидация имени владельца
+    if (!cardHolder.trim()) {
+        showError('cardHolder', 'Имя владельца карты обязательно для заполнения');
+        isValid = false;
+    } else if (!validateCardHolder(cardHolder)) {
+        showError('cardHolder', 'Некорректное имя владельца карты');
+        isValid = false;
+    }
+    
+    // Валидация срока действия
+    if (!expiryDate.trim()) {
+        showError('expiryDate', 'Срок действия карты обязателен для заполнения');
+        isValid = false;
+    } else if (!validateExpiryDate(expiryDate)) {
+        showError('expiryDate', 'Некорректный срок действия карты или карта просрочена');
+        isValid = false;
+    }
+    
+    if (!cvcCode.trim()) {
+        console.log('CVC пустой - показываем ошибку');
+        showError('cvcCode', 'CVC/CVV код обязателен для заполнения');
+        isValid = false;
+    } else if (!validateCVC(cvcCode)) {
+        console.log('CVC невалидный - показываем ошибку');
+        showError('cvcCode', 'Некорректный CVC/CVV код (3 или 4 цифры)');
+        isValid = false;
+    }
+    
+    if (!isValid) {
+        return;
+    }
+    
+    // Если все поля валидны, показываем экран успешной оплаты
+    document.getElementById('paymentContent').style.display = 'none';
+    document.getElementById('paymentSuccess').style.display = 'block';
+}
+
+// Функция для закрытия третьего модального окна
+function closeThirdModal() {
+    const modal = document.getElementById('thirdModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Добавляем обработчики событий для улучшения UX
+document.addEventListener('DOMContentLoaded', function() {
+    // Форматирование номера карты (добавление пробелов)
+    const cardNumberInput = document.getElementById('cardNumber');
+    if (cardNumberInput) {
+        cardNumberInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+                if (value.length > 19) value = value.substring(0, 19);
+            }
+            
+            e.target.value = value;
+            hideError('cardNumber');
+        });
+    }
+    
+    // Форматирование срока действия
+    const expiryInput = document.getElementById('expiryDate');
+    if (expiryInput) {
+        expiryInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                if (value.length <= 2) {
+                    value = value;
+                } else {
+                    value = value.substring(0, 2) + ' / ' + value.substring(2, 4);
+                }
+                if (value.length > 7) value = value.substring(0, 7);
+            }
+            
+            e.target.value = value;
+            hideError('expiryDate');
+        });
+    }
+    
+    // Ограничение ввода для CVC (только цифры)
+    const cvcInput = document.getElementById('cvcCode');
+    if (cvcInput) {
+        cvcInput.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+            if (e.target.value.length > 4) {
+                e.target.value = e.target.value.substring(0, 4);
+            }
+            hideError('cvcCode');
+        });
+    }
+    
+    // Ограничение ввода для имени (только буквы и пробелы)
+    const cardHolderInput = document.getElementById('cardHolder');
+    if (cardHolderInput) {
+        cardHolderInput.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, '');
+            hideError('cardHolder');
+        });
+    }
+});
+        
         
         // Обновленная функция completeBooking во втором окне
         function completeBooking() {
@@ -2097,39 +2323,7 @@
             }
         }
         
-        // Обновляем обработчики событий для третьего модального окна
-        document.addEventListener('DOMContentLoaded', function() {
-            // Закрытие третьего модального окна по клику вне области
-            const thirdModal = document.getElementById('thirdModal');
-            if (thirdModal) {
-                thirdModal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeThirdModal();
-                    }
-                });
-            }
 
-            // Обработчик для кнопки закрытия в третьем окне
-            const thirdModalClose = document.querySelector('#thirdModal .modal-close');
-            if (thirdModalClose) {
-                thirdModalClose.addEventListener('click', closeThirdModal);
-            }
-            
-            // Обработчик для кнопки "Готово" в успешной оплате
-            const successDoneBtn = document.querySelector('#paymentSuccess .pay-button');
-            if (successDoneBtn) {
-                successDoneBtn.addEventListener('click', closeThirdModal);
-            }
-            
-            // Закрытие по Escape для всех модальных окон
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeBookingModal();
-                    closeSecondModal();
-                    closeThirdModal();
-                }
-            });
-        });
             
 
         // Вспомогательная функция для генерации карточки отеля
