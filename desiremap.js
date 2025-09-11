@@ -121,6 +121,8 @@ document.addEventListener('keydown', (event) => {
 
 // Кнопка сброса
 document.getElementById('reset-btn').addEventListener('click', () => {
+    console.log('Очистка данных...');
+    
     // Сбрасываем селекты
     document.querySelectorAll('select').forEach(select => {
         select.selectedIndex = 0;
@@ -131,22 +133,35 @@ document.getElementById('reset-btn').addEventListener('click', () => {
         selectedOptions[key] = null;
     });
     
+    // ОЧИЩАЕМ SESSIONSTORAGE - это ключевое изменение!
+    sessionStorage.removeItem('tourConstructionData');
+    console.log('sessionStorage очищен');
+    
     // Восстанавливаем карточки
     document.querySelectorAll('.grid-item').forEach(item => {
         const type = item.getAttribute('data-type');
         const imageContainer = item.querySelector('.image-container');
         const placeholder = item.querySelector('.placeholder');
+        const selectedValue = item.querySelector('.selected-value');
         
         if (imageContainer && placeholder) {
             imageContainer.innerHTML = '<img src="key.jpg" alt="Выберите опцию" style="display:block;">';
             placeholder.textContent = getPlaceholderText(type);
+            placeholder.style.display = 'block';
             item.classList.remove('filled');
+            item.classList.remove('selected');
+        }
+        
+        // Скрываем текст выбранного значения, если он есть
+        if (selectedValue) {
+            selectedValue.style.display = 'none';
         }
     });
     
     // Перезапускаем анимацию синхронно
     document.querySelectorAll('.grid-item').forEach(item => {
         item.style.animation = 'none';
+        item.classList.add('pulse'); // Добавляем класс pulse обратно
     });
     
     // Включаем анимацию через небольшой timeout
@@ -155,7 +170,10 @@ document.getElementById('reset-btn').addEventListener('click', () => {
             item.style.animation = 'pulse 1s infinite';
         });
     }, 50);
+    
+    console.log('Все данные сброшены:', selectedOptions);
 });
+
 
 // Функция для текста плейсхолдера
 function getPlaceholderText(type) {
@@ -175,23 +193,35 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     const currentCategory = document.getElementById('category-title').textContent;
 
     // Проверяем, все ли поля заполнены
-    const allFilled = Object.values(selectedOptions).every(value => value !== null);
+    const allFilled = Object.values(selectedOptions).every(option => 
+        option !== null && option.value !== undefined && option.value !== ''
+    );
     
     if (!allFilled) {
         showErrorModal();
         return;
     }
 
-    // Сохраняем ВСЕ данные для results.html
+    // Очищаем предыдущие данные
+    sessionStorage.removeItem('tourConstructionData');
+    
+    // Сохраняем ТОЛЬКО ВЫБРАННЫЕ опции (без null значений)
+    const filteredOptions = {};
+    Object.entries(selectedOptions).forEach(([key, value]) => {
+        if (value && value.value) {
+            filteredOptions[key] = value;
+        }
+    });
+    
     const tourData = {
         category: currentCategory,
-        options: selectedOptions
+        options: selectedOptions, // Сохраняем ВСЕ selectedOptions
+        timestamp: new Date().getTime()
     };
     
     console.log('Сохраняем в sessionStorage:', tourData);
     sessionStorage.setItem('tourConstructionData', JSON.stringify(tourData));
     
-    // Перенаправляем
     window.location.href = `results.html`;
 });
 
