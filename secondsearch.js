@@ -1,63 +1,42 @@
-// База данных отелей по категориям - ИСПРАВЛЕННАЯ
+// База данных отелей
 const hotelsByCategory = {
     "Новогодние туры": [
         {
             id: 101,
             name: "Winter Fairy Tale Resort",
             image: "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400",
-            category: "Новогодние туры", // Исправлено на совпадение
+            category: "Новогодние туры",
             description: "Уединение и магия зимы: камин, лес и тишина заснеженного парка",
             price: 189000,
-            rating: 5, // Добавлен рейтинг
-            features: ["Новогодний банкет", "Дед Мороз", "Детская анимация", "каток"],
-            includedOptions: {
-                accommodation: "hotelfive",    // Должно совпадать с значениями в селектах
-                food: "all-inclusive",        // Должно совпадать с значениями в селектах
-                transfer: "vip",              // Должно совпадать с значениями в селектах
-                duration: "10-nights",        // Должно совпадать с значениями в селектах
-                people: "family",             // Должно совпадать с значениями в селектах
-                gift: "spa"                   // Должно совпадать с значениями в селектах
-            }
+            stars: 5, // Только stars, без rating
+            features: ["Новогодний банкет", "Дед Мороз", "Детская анимация", "Каток"]
         },
         {
             id: 102,
-            name: "Snow Queen Hotel",
-            image: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=400", // Исправлена картинка
-            category: "Новогодние туры", // Исправлено на совпадение
+            name: "Snow Queen Hotel", 
+            image: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=400",
+            category: "Новогодние туры",
             description: "Новогодняя сказка в горах с катком и горками",
             price: 145000,
-            rating: 4, // Добавлен рейтинг
-            features: ["Каток", "Горки", "Новогодний ужин", "сауна"],
-            includedOptions: {
-                accommodation: "hotelfive",
-                food: "all-inclusive",
-                transfer: "vip",
-                duration: "7-nights",
-                people: "family",
-                gift: "karaoke"
-            }
-        },
+            stars: 4, // Только stars, без rating
+            features: ["Каток", "Горки", "Новогодний ужин", "Сауна"]
+        }
+    ],
+    "Свадебные туры": [
         {
-            id: 103,
-            name: "Fairy Tale Resort",
-            image: "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400",
-            category: "Новогодние туры", // Исправлено на совпадение
-            description: "Уединение и магия зимы: камин, лес и тишина заснеженного парка",
-            price: 205000,
-            rating: 3, // Добавлен рейтинг
-            features: ["Новогодний банкет", "Дед Мороз", "Детская анимация", "каток"],
-            includedOptions: {
-                accommodation: "hotelthree",    // Должно совпадать с значениями в селектах
-                food: "all-inclusive",        // Должно совпадать с значениями в селектах
-                transfer: "vip",              // Должно совпадать с значениями в селектах
-                duration: "10-nights",        // Должно совпадать с значениями в селектах
-                people: "couple",             // Должно совпадать с значениями в селектах
-                gift: "spa"                   // Должно совпадать с значениями в селектах
-            }
-        } 
-    ] // Закрывающая скобка массива
-}; // Закрывающая скобка объекта
+            id: 201,
+            name: "Romantic Wedding Palace",
+            image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400",
+            category: "Свадебные туры",
+            description: "Идеальное место для свадебного путешествия",
+            price: 220000,
+            stars: 5,
+            features: ["Свадебный ужин", "Фотосессия", "Романтический декор"]
+        }
+    ]
+};
 
+// Названия опций
 const optionTitles = {
     accommodation: {
         "hotelfive": "Отель 5 звезд",
@@ -70,23 +49,23 @@ const optionTitles = {
         "all": "Завтраки и ужины"
     },
     transfer: {
-        "standard": "Стандарт",
+        "standard": "Стандартный трансфер",
         "vip": "VIP-трансфер"
     },
     duration: {
-        "7-nights": "до 7 ночей",
-        "10-nights": "до 10 ночей", 
-        "14-nights": "до 14 ночей"
+        "7-nights": "7 ночей",
+        "10-nights": "10 ночей", 
+        "14-nights": "14 ночей"
     },
     people: {
-        "couple": "Пара",
-        "family": "Взрослые и дети",
-        "friends": "Компания друзей"
+        "couple": "Для пары",
+        "family": "Для семьи",
+        "friends": "Для компании друзей"
     },
     gift: {
         "swimmingpool": "Визит в бассейн",
         "karaoke": "Билет в караоке", 
-        "spa": "Сеанс на массаж"
+        "spa": "Спа-процедуры"
     }
 };
 
@@ -150,47 +129,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// УПРОЩЕННАЯ ФУНКЦИЯ ФИЛЬТРАЦИИ
 function findSuitableHotels(data) {
     console.log('=== ФИЛЬТРАЦИЯ ОТЕЛЕЙ ===');
     const category = data.category;
-    const options = data.options;
+    const selectedStars = getSelectedStars(data.options.accommodation);
     
-    console.log('Ищем категорию:', category);
-    console.log('С опциями:', options);
+    console.log('Ищем отели категории:', category);
+    console.log('С звездами:', selectedStars);
 
-    // Получаем все отели выбранной категории
+    // Берем отели только нужной категории
     const categoryHotels = hotelsByCategory[category] || [];
     console.log('Все отели в категории:', categoryHotels.length);
-    
-    if (categoryHotels.length === 0) {
-        return [];
-    }
 
-    // ФИЛЬТРУЕМ отели по ВЫБРАННЫМ опциям
+    // Фильтруем по звездам
     const filteredHotels = categoryHotels.filter(hotel => {
-        let isSuitable = true;
-        
-        Object.entries(options).forEach(([optionType, optionData]) => {
-            // Если опция выбрана в конструкторе
-            if (optionData && optionData.value) {
-                const hotelOptionValue = hotel.includedOptions[optionType];
-                const selectedValue = getValueFromText(optionData.value, optionType);
-                
-                console.log(`Опция ${optionType}: отель=${hotelOptionValue}, выбрано=${selectedValue}`);
-                
-                if (hotelOptionValue !== selectedValue) {
-                    isSuitable = false;
-                }
-            }
-        });
-        
-        return isSuitable;
+        return hotel.stars === selectedStars;
     });
 
-    console.log('После фильтрации осталось отелей:', filteredHotels.length);
+    console.log('После фильтрации по звездам:', filteredHotels.length);
     
     return filteredHotels;
+}
+
+// Функция получения количества звезд из выбранной опции
+function getSelectedStars(accommodationOption) {
+    if (!accommodationOption || !accommodationOption.value) return null;
+    
+    const starMap = {
+        "hotelfive": 5,
+        "hotelfour": 4,
+        "hotelthree": 3
+    };
+    
+    // Находим ключ опции по названию
+    for (const [key, title] of Object.entries(optionTitles.accommodation)) {
+        if (title === accommodationOption.value) {
+            return starMap[key];
+        }
+    }
+    
+    return null;
 }
 
 // НОВАЯ ФУНКЦИЯ - получаем значение из текста
@@ -251,97 +229,43 @@ function displayResults(hotels, searchData) {
     if (hotels.length === 0) {
         resultsContainer.innerHTML = `
             <div class="no-results">
-                <h3>По вашему запросу ничего не найдено</h3>
+                <h3>Отелей по вашему запросу не найдено</h3>
                 <p>Попробуйте изменить параметры поиска</p>
                 <button class="new-search-btn" onclick="window.history.back()">Вернуться к конструктору</button>
             </div>
         `;
-        if (resultsCount) resultsCount.textContent = 'Найдено отелей: 0';
+        resultsCount.textContent = 'Найдено отелей: 0';
         return;
     }
     
-    if (resultsCount) resultsCount.textContent = `Найдено отелей: ${hotels.length}`;
+    resultsCount.textContent = `Найдено отелей: ${hotels.length}`;
     
     let resultsHtml = '<div class="hotels-grid">';
     
     hotels.forEach((hotel) => {
-        const rating = hotel.rating || 4;
-        const ratingStars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-        
-        // Получаем человекочитаемые названия ВСЕХ опций отеля
-        const accommodationType = optionTitles.accommodation[hotel.includedOptions.accommodation] || hotel.includedOptions.accommodation;
-        const foodType = optionTitles.food[hotel.includedOptions.food] || hotel.includedOptions.food;
-        const transferType = optionTitles.transfer[hotel.includedOptions.transfer] || hotel.includedOptions.transfer;
-        const durationType = optionTitles.duration[hotel.includedOptions.duration] || hotel.includedOptions.duration;
-        const peopleType = optionTitles.people[hotel.includedOptions.people] || hotel.includedOptions.people;
-        const giftType = optionTitles.gift[hotel.includedOptions.gift] || hotel.includedOptions.gift;
+        const starsHtml = '★'.repeat(hotel.stars);
         
         resultsHtml += `
             <div class="hotel-card">
-                <img src="${hotel.image}" alt="${hotel.name}" class="hotel-image" 
-                     onerror="this.src='https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400'">
+                <img src="${hotel.image}" alt="${hotel.name}" class="hotel-image">
                 
                 <div class="hotel-info">
                     <h3 class="hotel-name">${hotel.name}</h3>
-                    <div class="hotel-rating">${ratingStars}</div>
+                    <div class="hotel-stars">${starsHtml}</div>
                     <p class="hotel-description">${hotel.description}</p>
                     
-                    <!-- ОСНОВНЫЕ ОПЦИИ ОТЕЛЯ -->
                     <div class="hotel-features">
                         ${hotel.features.map(feature => `
                             <span class="feature-tag">${feature}</span>
                         `).join('')}
                     </div>
                     
-                    <!-- ДЕТАЛИ ОПЦИЙ (автоматически подтягиваются) -->
-                    <div class="hotel-details-grid">
-                        <div class="detail-card">
-                            <div class="detail-icon">🏨</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Размещение</span>
-                                <span class="detail-value">${accommodationType}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-card">
-                            <div class="detail-icon">🍽️</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Питание</span>
-                                <span class="detail-value">${foodType}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-card">
-                            <div class="detail-icon">🚗</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Трансфер</span>
-                                <span class="detail-value">${transferType}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-card">
-                            <div class="detail-icon">🌙</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Ночей</span>
-                                <span class="detail-value">${durationType}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-card">
-                            <div class="detail-icon">👥</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Для кого</span>
-                                <span class="detail-value">${peopleType}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-card">
-                            <div class="detail-icon">🎁</div>
-                            <div class="detail-content">
-                                <span class="detail-label">Подарок</span>
-                                <span class="detail-value">${giftType}</span>
-                            </div>
-                        </div>
+                    <!-- ВЫБРАННЫЕ ОПЦИИ ПОЛЬЗОВАТЕЛЯ -->
+                    <div class="selected-options">
+                        <h4>Ваши опции:</h4>
+                        ${Object.entries(searchData.options).map(([type, option]) => 
+                            option ? `<div class="selected-option">${getOptionLabel(type)}: ${option.value}</div>` : ''
+                        ).join('')}
                     </div>
                     
                     <div class="hotel-price-section">
@@ -358,6 +282,42 @@ function displayResults(hotels, searchData) {
     
     setupBookingButtons();
 }
+
+// В конструкторе сохраняем значение опции как ключ, а не текст
+function updateGridItem(type, text, imageUrl, value) {
+    const gridItem = document.querySelector(`.grid-item[data-type="${type}"]`);
+    
+    if (gridItem) {
+        const imageContainer = gridItem.querySelector('.image-container');
+        const placeholder = gridItem.querySelector('.placeholder');
+        
+        if (imageContainer && placeholder) {
+            imageContainer.innerHTML = `<img src="${imageUrl}" alt="${text}">`;
+            placeholder.textContent = text;
+            gridItem.classList.add('filled');
+            
+            // Сохраняем КЛЮЧ значения, а не текст
+            selectedOptions[type] = { 
+                value: value, // Сохраняем ключ (например "hotelfive")
+                text: text    // И текст для отображения
+            };
+        }
+    }
+}
+
+// В обработчике селектов:
+select.addEventListener('change', (e) => {
+    const selectId = e.target.id;
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const value = selectedOption.value; // Ключ значения
+    const text = selectedOption.textContent; // Текст для отображения
+    const imageUrl = selectedOption.getAttribute('data-image');
+    const type = selectMapping[selectId];
+    
+    if (value && imageUrl) {
+        updateGridItem(type, text, imageUrl, value);
+    }
+});
 
 function setupBookingButtons() {
     document.querySelectorAll('.booking-btn').forEach(button => {
