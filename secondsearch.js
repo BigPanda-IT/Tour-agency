@@ -606,6 +606,169 @@ const hotelsByCategory = {
             "features": ["Массаж у океана", "Фруктовые коктейли", "Шезлонги на пляже", "Спа-ритуалы"]
         }        
     ],
+    "Отдых на островах": [
+        {
+            "id": 161,
+            "name": "Coral Paradise Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=27c01bea96fb945bbd4ce8e09a458c5b37f6bad1-16848981-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Роскошный курорт на частном острове с виллами над водой и кристально-чистой лагуной",
+            "price": 920000,
+            "stars": 5,
+            "features": ["Виллы на сваях над водой", "Стеклянный пол в лагуне", "Персональный дайв-инструктор", "Романтические ужины на песке"]
+        },
+        {
+            "id": 162,
+            "name": "Maldives Royal Escape",
+            "image": "https://avatars.mds.yandex.net/i?id=1b43c0cc6cffcac035b8a10ce5702738a8327b86-16110730-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Эксклюзивный островной ретрит с водными бунгало и коралловыми садами для сноркелинга",
+            "price": 880000,
+            "stars": 5,
+            "features": ["Водные бунгало", "Приватный коралловый риф", "Спа-процедуры над водой", "Гидросамолет трансфер"]
+        },
+        {
+            "id": 163,
+            "name": "Tropical Diamond Island",
+            "image": "https://avatars.mds.yandex.net/i?id=ade836e3ad2fca8e7cc9f21cf110fcf1_l-5235392-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Частный остров с виллами у океана и белоснежными пляжами в окружении пальмовых рощ",
+            "price": 950000,
+            "stars": 5,
+            "features": ["Приватный пляж", "Бассейн infinity", "Шеф-повар на вилле", "Катамаран в аренду"]
+        },
+        {
+            "id": 164,
+            "name": "Ocean Whisper Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=6fc3b32bdf330b47008dad143413017aff5d8bdd-5965946-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Премиум курорт с подводными виллами и панорамным видом на морских обитателей",
+            "price": 1100000,
+            "stars": 5,
+            "features": ["Подводные виллы", "Стеклянные стены в океане", "Наблюдение за мантами", "Ресторан под водой"]
+        },
+        {
+            "id": 165,
+            "name": "Sunset Bay Luxury",
+            "image": "https://ak-d.tripcdn.com/images/200l1d000001ekvaxC35C_R_960_660_R5_D.jpg",
+            "category": "Отдых на островах",
+            "description": "Виллы премиум-класса на краю атолла с захватывающими закатами и приватностью",
+            "price": 870000,
+            "stars": 5,
+            "features": ["Виллы на краю атолла", "Закаты над океаном", "Частный бассейн", "Обслуживание дворецким"]
+        },
+        {
+            "id": 166,
+            "name": "Pearl Island Sanctuary",
+            "image": "https://avatars.mds.yandex.net/i?id=b22f4a38928db7d32ab70d60b6da3680_l-12733951-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Элитный спа-курорт на острове с натуральными процедурами из жемчуга и морских водорослей",
+            "price": 780000,
+            "stars": 5,
+            "features": ["Жемчужные спа-процедуры", "Йога на пляже", "Детокс программы", "Натуральная косметика"]
+        },
+        {
+            "id": 167,
+            "name": "Blue Lagoon Boutique",
+            "image": "https://avatars.mds.yandex.net/i?id=5519b39dada3b67146a782b66acfc520_l-11777771-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Бутик-отель в лагуне с комфортными бунгало и доступом к коралловым рифам",
+            "price": 420000,
+            "stars": 4,
+            "features": ["Бунгало у лагуны", "Сноркелинг у рифа", "Ресторан морепродуктов", "Теннисный корт"]
+        },
+        {
+            "id": 168,
+            "name": "Palm Beach Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=6ef0013be62bbca53d000b34d8908169_l-4594612-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Отель на первой линии с пальмовой рощей и широким песчаным пляжем",
+            "price": 380000,
+            "stars": 4,
+            "features": ["Пляж первой линии", "Пальмовая роща", "Бассейн с баром", "Водные виды спорта"]
+        },
+        {
+            "id": 169,
+            "name": "Coral Garden Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=ad310fdd39e62e81f32d11e0cf559041700f18f6-15428071-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Курорт у кораллового сада с комфортными номерами и морскими экскурсиями",
+            "price": 350000,
+            "stars": 4,
+            "features": ["Коралловый сад", "Морские экскурсии", "Дайвинг центр", "Пляжные бунгало"]
+        },
+        {
+            "id": 170,
+            "name": "Island Breeze Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=d6b081bae59a8d67873e3a8dd6e850a3_l-5285663-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Уютный отель с тропическим садом и доступом к дикому пляжу с морскими черепахами",
+            "price": 320000,
+            "stars": 4,
+            "features": ["Дикий пляж", "Наблюдение за черепахами", "Тропический сад", "Вечерние барбекю"]
+        },
+        {
+            "id": 171,
+            "name": "Sunset View Resort",
+            "image": "https://i.pinimg.com/736x/93/ff/45/93ff45e1428117ac8dcfa97df6f3c5e7.jpg",
+            "category": "Отдых на островах",
+            "description": "Курорт на западном побережье с лучшими видами на закат и уютными бунгало",
+            "price": 290000,
+            "stars": 4,
+            "features": ["Вид на закат", "Бунгало с террасой", "Бар у бассейна", "Серфинг уроки"]
+        },
+        {
+            "id": 172,
+            "name": "Beach Comber Hotel",
+            "image": "https://attaches.1001tur.ru/hotels/gallery/4309/768-0__use_origin_data_062.jpeg",
+            "category": "Отдых на островах",
+            "description": "Простой отель у пляжа с базовыми удобствами и доступом к морским развлечениям",
+            "price": 195000,
+            "stars": 3,
+            "features": ["Пляж в шаговой доступности", "Вентилятор/кондиционер", "Прокат снаряжения", "Кафе на пляже"]
+        },
+        {
+            "id": 173,
+            "name": "Coconut Grove Inn",
+            "image": "https://avatars.mds.yandex.net/get-altay/14110197/2a00000192ea3720712c16a8d4e293237e3d/orig",
+            "category": "Отдых на островах",
+            "description": "Небольшая гостиница в кокосовой роще с бюджетными номерами и домашней атмосферой",
+            "price": 250000,
+            "stars": 3,
+            "features": ["Кокосовая роща", "Домашняя кухня", "Прогулки по острову", "Гамаки в саду"]
+        },
+        {
+            "id": 174,
+            "name": "Sea Shell Hostel",
+            "image": "https://avatars.mds.yandex.net/i?id=f96ac32b12c862f0632549542efd0106_l-5885375-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Экономный вариант размещения для любителей пляжного отдыха и морских приключений",
+            "price": 220000,
+            "stars": 3,
+            "features": ["Общая кухня", "Пляжный волейбол", "Общежитие/номера", "Туры на лодке"]
+        },
+        {
+            "id": 175,
+            "name": "Island Backpackers",
+            "image": "https://avatars.mds.yandex.net/i?id=6b4615726dd265c8ff4e1899fa289fe6_l-7998362-images-thumbs&n=13",
+            "category": "Отдых на островах",
+            "description": "Замечательная вилла для путешественников, исследующих островной мир",
+            "price": 95000,
+            "stars": 3,
+            "features": ["Дайвинг", "Снорклинг", "Аренда яхты", "Морские прогулки"]
+        },
+        {
+            "id": 176,
+            "name": "Bay View Luxhouse",
+            "image": "https://i.pinimg.com/736x/07/55/7f/07557f21e6a4d6dcc90d771396271846.jpg",
+            "category": "Отдых на островах",
+            "description": "Шикарный дом с видом на океан и прозрачной водой",
+            "price": 110000,
+            "stars": 3,
+            "features": ["Вид на океан", "Общая терраса", "Снорклинг", "Рыбалка с местными"]
+        }
+    ],
+
 };
 
 // Названия опций
