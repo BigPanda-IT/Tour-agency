@@ -433,7 +433,179 @@ const hotelsByCategory = {
             "stars": 3,
             "features": ["Номер для молодоженов", "Лепестки роз на кровати", "Бутылка шампанского", "Завтрак в номер"]
         }
-    ]
+    ],
+    "VIP-туры и услуги": [
+        {
+            "id": 144,
+            "name": "Imperial Diamond Resort",
+            "image": "https://i.pinimg.com/originals/23/04/f0/2304f06333243aa00cf795b383197de3.jpg",
+            "category": "VIP-туры и услуги",
+            "description": "Эксклюзивный закрытый курорт с виллами, обслуживаемыми персональным дворецким и шеф-поваром",
+            "price": 990000,
+            "stars": 5,
+            "features": ["Частный пляж", "Персональный дворецкий", "Шеф-повар на вилле", "Вертолетная площадка"]
+        },
+        {
+            "id": 145,
+            "name": "Private Island Sanctuary",
+            "image": "https://avatars.mds.yandex.net/i?id=5be8b6d60418c1a6423cd4bc8803f627-5298260-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Полностью приватный остров с собственной инфраструктурой для избранных гостей",
+            "price": 1000000,
+            "stars": 5,
+            "features": ["Аренда всего острова", "Команда обслуживания 24/7", "Яхта в распоряжении", "Эксклюзивная экосистема"]
+        },
+        {
+            "id": 146,
+            "name": "Presidential Skyline Penthouse",
+            "image": "https://i.pinimg.com/originals/da/ec/ca/daeccae1a1091cf921bd453ca6c0f8df.jpg",
+            "category": "VIP-туры и услуги",
+            "description": "Эксклюзивный пентхаус на частном острове с 360-градусным видом на океан и вертолетной площадкой",
+            "price": 850000,
+            "stars": 5,
+            "features": ["Приватный лифт", "Бесконечный бассейн на крыше", "Частный шеф-повар", "Панорамные виды на море"]
+        },
+        {
+            "id": 147,
+            "name": "Alpine Royal Chalet",
+            "image": "https://i.pinimg.com/originals/2b/2f/4c/2b2f4c94cf726c040edba5aecf0fdd2f.png",
+            "category": "VIP-туры и услуги",
+            "description": "Роскошная вилла на частном острове в тропиках с белоснежными пляжами и кокосовыми пальмами",
+            "price": 920000,
+            "stars": 5,
+            "features": ["Частный пляж", "Инфинити-бассейн", "Дайвинг-центр", "Спа-комплекс у океана"]
+        },
+        {
+            "id": 148,
+            "name": "Gold Coast Mansion",
+            "image": "https://avatars.mds.yandex.net/i?id=b890cd752160de97307e6bf9dd881ec7_l-8567894-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Величественная вилла на Мальдивах с стеклянным полом, водными бунгало и коралловым садом",
+            "price": 950000,
+            "stars": 5,
+            "features": ["Водные бунгало", "Стеклянный пол над лагуной", "Сноркелинг с черепахами", "Романтические ужины на песке"]
+        },
+        {
+            "id": 149,
+            "name": "Safari Royal Camp",
+            "image": "https://avatars.mds.yandex.net/i?id=12068803cdf7944397d839ad496b878c_l-5214861-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Элитный кемпинг на частном тропическом острове с виллами на сваях и бирюзовой лагуной",
+            "price": 790000,
+            "stars": 5,
+            "features": ["Виллы на сваях над водой", "Прозрачная лодка-дно", "Персональный дайв-гид", "Морской сафари-тур"]
+        },
+        {
+            "id": 150,
+            "name": "Platinum Business Tower",
+            "image": "https://avatars.mds.yandex.net/i?id=fda39f8fbcad45261d3bb2e73c9168a5_l-8243281-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Бизнес-вилла на острове с современными переговорными и прямым доступом к коралловым рифам",
+            "price": 750000,
+            "stars": 5,
+            "features": ["Офис над водой", "Встречи на яхте", "Скайп-комната", "Серфинг с инструктором"]
+        },
+        {
+            "id": 151,
+            "name": "Vineyard Castle Estate",
+            "image": "https://avatars.mds.yandex.net/i?id=bd14434e1c787fd4028294432129cdf757496d4a-12649328-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Замок на тропическом острове с частными виллами, бассейнами и коктейлями из кокосов",
+            "price": 880000,
+            "stars": 5,
+            "features": ["Виллы с бассейнами", "Кокосовая плантация", "Морской трюфельный ужин", "Спа из водорослей"]
+        },
+        {
+            "id": 152,
+            "name": "Elite Business Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=5aa2677afe89885e3c7aff5505d2fb3f_l-9226126-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Бизнес-курорт на острове с виллами для переговоров и отдыха в лагуне с мантами",
+            "price": 720000,
+            "stars": 4,
+            "features": ["Вилла для встреч", "Сноркелинг с мантами", "Бизнес-ланч на яхте", "Вечерние коктейли"]
+        },
+        {
+            "id": 153,
+            "name": "Premium Spa Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=6b955e0f141d7498f4946655108bb587_l-5249900-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Спа-остров с виллами над водой и ритуалами красоты на основе морских минералов",
+            "price": 680000,
+            "stars": 4,
+            "features": ["Спа над водой", "Ванны с морской водой", "Йога на рассвете", "Массаж с ракушками"]
+        },
+        {
+            "id": 154,
+            "name": "Designer Boutique Hotel",
+            "image": "https://online.space-travel.ru/data/hotel/16380_24400_photo_-1564890605.jpg",
+            "category": "VIP-туры и услуги",
+            "description": "Дизайнерские водные виллы с стеклянными стенами и коралловым садом под ногами",
+            "price": 750000,
+            "stars": 4,
+            "features": ["Стеклянные стены", "Коралловый сад", "Подводная фотосессия", "Дизайнерский интерьер"]
+        },
+        {
+            "id": 155,
+            "name": "Golf & Country Club",
+            "image": "https://avatars.mds.yandex.net/get-mpic/4591438/img_id881095954324495345.jpeg/orig",
+            "category": "VIP-туры и услуги",
+            "description": "Гольф-клуб на острове с полями у океана и виллами с приватными бассейнами",
+            "price": 620000,
+            "stars": 4,
+            "features": ["Поле у океана", "Виллы с бассейнами", "Гольф-кэдди", "Клуб у пляжа"]
+        },
+        {
+            "id": 156,
+            "name": "Luxury Wine Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=304d6bf70147e93082202a7f248a37984f42f37a-10807162-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Винный курорт на острове с дегустациями в бунгало над водой и ужинами при свечах",
+            "price": 570000,
+            "stars": 4,
+            "features": ["Дегустации над водой", "Бунгало с винным погребом", "Ужины при свечах", "Винные круизы"]
+        },
+        {
+            "id": 157,
+            "name": "Executive Airport Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=4974cea87b302e0aa7b0af00aed4c906_l-12398265-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Отель у моря с быстрым трансфером на гидросамолете и виллами на первой линии",
+            "price": 590000,
+            "stars": 4,
+            "features": ["Трансфер на гидросамолете", "Виллы на первой линии", "Приватный чек-ин", "Вид на закат"]
+        },
+        {
+            "id": 158,
+            "name": "Business Comfort Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=01aefdac61a5eccf286318ad5e60e370_l-10748854-images-thumbs&n=13",
+            "category": "VIP-туры и услуги",
+            "description": "Комфортные бунгало у лагуны с рабочими зонами и быстрым доступом к дайвингу",
+            "price": 585000,
+            "stars": 3,
+            "features": ["Бунгало у лагуны", "Рабочая зона", "Дайвинг-центр", "Завтрак в бунгало"]
+        },
+        {
+            "id": 159,
+            "name": "Premium City Hotel",
+            "image": "https://i.pinimg.com/736x/2d/55/a1/2d55a1969d71055a08e1892084ab2dd7.jpg",
+            "category": "VIP-туры и услуги",
+            "description": "Городской отель на острове с видами на гавань и номерами с джакузи",
+            "price": 465000,
+            "stars": 3,
+            "features": ["Вид на гавань", "Номер с джакузи", "Приветственный коктейль", "Парковка для яхт"]
+        },
+        {
+            "id": 160,
+            "name": "Comfort Spa Hotel",
+            "image": "https://i.ytimg.com/vi/iJtDH6Xz_vk/maxresdefault.jpg",
+            "category": "VIP-туры и услуги",
+            "description": "Спа-отель на берегу океана с массажем под шум прибоя и коктейлями из тропических фруктов",
+            "price": 395000,
+            "stars": 3,
+            "features": ["Массаж у океана", "Фруктовые коктейли", "Шезлонги на пляже", "Спа-ритуалы"]
+        }        
+    ],
 };
 
 // Названия опций
