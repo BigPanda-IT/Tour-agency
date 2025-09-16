@@ -920,6 +920,128 @@ const hotelsByCategory = {
             "features": ["Простая каюта", "Питание в буфете", "Базовые активности", "Доступ к палубам"]
         }
     ],
+    "Детский отдых": [
+        {
+            "id": 192,
+            "name": "Magic Kingdom Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=7a9dd8c877ac0480caa3472d8e3e0659_l-10349474-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Волшебный курорт с тематическими зонами, аквапарком и анимацией 24/7 для незабываемого отдыха с детьми",
+            "price": 250000,
+            "stars": 5,
+            "features": ["Тематический аквапарк", "Детский клуб с нянями", "Шоу персонажей", "Безопасная территория"]
+        },
+        {
+            "id": 193,
+            "name": "Pirates Adventure Bay",
+            "image": "https://siapress.ru/images/news/main/124063-93-mln-rubley-potratili-na-letniy-otdih-shkolnikov-v-surgutskom-rayone.jpg",
+            "category": "Детский отдых",
+            "description": "Пиратский тематический парк-отель с сокровищами, квестами и водными приключениями для юных искателей приключений",
+            "price": 220000,
+            "stars": 5,
+            "features": ["Пиратские квесты", "Водные горки", "Карта сокровищ", "Тематические номера-каюты"]
+        },
+        {
+            "id": 194,
+            "name": "Fantasy World Hotel",
+            "image": "https://cdn5.imgbb.ru/user/76/761901/201902/e63de8c5935bd1efe7b5cb31b645a537.png",
+            "category": "Детский отдых",
+            "description": "Отель в мире сказок с замками из песка на берегу моря и интерактивными представлениями для детей всех возрастов",
+            "price": 215000,
+            "stars": 5,
+            "features": ["Сказочные замки", "Интерактивные шоу", "Мастер-классы волшебства", "Детское спа"]
+        },
+        {
+            "id": 195,
+            "name": "Dino Land Resort",
+            "image": "https://i.pinimg.com/originals/bd/30/93/bd30938ec151762c7b6d3597e7228e66.jpg",
+            "category": "Детский отдых",
+            "description": "Путешествие в водный мир,в котором детей ждет море аттракционов, игр и анаимаций",
+            "price": 200000,
+            "stars": 5,
+            "features": ["Раскопки динозавров", "Научная лаборатория", "3D сафари", "Образовательные программы"]
+        },
+        {
+            "id": 196,
+            "name": "Aqua Fantasy Palace",
+            "image": "https://avatars.mds.yandex.net/i?id=73ee2d61d106a87dabba8bcf8b1519a1_l-8497455-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Водный рай с безопасными бассейнами, горками для всех возрастов и морскими программами с профессиональными инструкторами",
+            "price": 205000,
+            "stars": 5,
+            "features": ["Детские бассейны с подогревом", "Горки для всех возрастов", "Обучение плаванию", "Водные шоу"]
+        },
+        {
+            "id": 197,
+            "name": "Sunny Kids Club",
+            "image": "https://avatars.mds.yandex.net/i?id=67e79409f4c604dc21be425ce42135c4_l-4575726-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Семейный курорт с развитой детской инфраструктурой, мини-клубом и развлечениями для разных возрастных групп",
+            "price": 170000,
+            "stars": 4,
+            "features": ["Мини-клуб по возрастам", "Детское меню", "Игровые площадки", "Анимационная программа"]
+        },
+        {
+            "id": 198,
+            "name": "Family Beach House",
+            "image": "https://www.tourdom.ru/hotline/upload/medialibrary/f5b/f5b10bfd73d265b0286ec1f3275e7a26.jpg",
+            "category": "Детский отдых",
+            "description": "Пляжный отель с мелководьем, песочными замками и безопасной территорией для отдыха с маленькими детьми",
+            "price": 140000,
+            "stars": 4,
+            "features": ["Мелководный пляж", "Песочницы с игрушками", "Детские шезлонги", "Пляжные игры"]
+        },
+        {
+            "id": 199,
+            "name": "Happy Camp Resort",
+            "image": "https://sundio-media.azureedge.net/products/Images/Original/700000/59000/759866-Original.jpg?width=1920&height=1280&scale=both&mode=crop",
+            "category": "Детский отдых",
+            "description": "Активный отдых для семей с детьми: походы, спортивные игры и творческие мастерские на природе",
+            "price": 165000,
+            "stars": 4,
+            "features": ["Спортивные площадки", "Творческие мастерские", "Походы с гидом", "Вечерние костры"]
+        },
+        {
+            "id": 200,
+            "name": "Kids Friendly Hotel",
+            "image": "https://i.pinimg.com/originals/29/13/16/291316c01764e8732624a4dc256fb452.jpg",
+            "category": "Детский отдых",
+            "description": "Семейный отдых с удобствами для детей и игровой комнатой",
+            "price": 100000,
+            "stars": 3,
+            "features": ["Детская игровая комната", "Семейные номера", "Микроволновка в номере", "Прокат колясок"]
+        },
+        {
+            "id": 201,
+            "name": "Beach Kids Paradise",
+            "image": "https://avatars.mds.yandex.net/i?id=21e32f49fc3dd556f671631f0f8d29b8_l-12461673-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Простой отель у моря с песчаным пляжем и неглубокой водой для безопасного купания детей",
+            "price": 105000,
+            "stars": 3,
+            "features": ["Песчаный пляж", "Неглубокое море", "Детский бассейн", "Пляжные игрушки"]
+        },
+        {
+            "id": 202,
+            "name": "Family Budget Inn",
+            "image": "https://avatars.mds.yandex.net/i?id=a278e0d3e3ae116654378cb4b660efff_l-9029424-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Размещение для семей с детьми с кухней и игровой зоной во дворе",
+            "price": 120000,
+            "stars": 3,
+            "features": ["Общая кухня", "Игровая зона во дворе", "Семейные комнаты", "Бюджетное питание"]
+        },
+        {
+            "id": 203,
+            "name": "Little Stars Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=c68eabbbdc47d4efc46b3bcd4864502ce137ce27-16441608-images-thumbs&n=13",
+            "category": "Детский отдых",
+            "description": "Семейный отель с основными удобствами для отдыха и парком развлечений рядом",
+            "price": 145000,
+            "stars": 3,
+            "features": ["Парк развлечений рядом", "Детские кроватки", "Небольшой бассейн", "Кафе с детским меню"]
+        }
+    ],
 };
 
 // Названия опций
