@@ -1004,7 +1004,7 @@ const hotelsByCategory = {
         {
             "id": 200,
             "name": "Kids Friendly Hotel",
-            "image": "https://i.pinimg.com/originals/29/13/16/291316c01764e8732624a4dc256fb452.jpg",
+            "image": "https://p0.zoon.ru/3/1/5a3c83a0a24fd957964d0210_63b3c0afca7d50.05676941.jpg",
             "category": "Детский отдых",
             "description": "Семейный отдых с удобствами для детей и игровой комнатой",
             "price": 100000,
