@@ -4,7 +4,7 @@ const hotelsByCategory = {
         {
             id: 101,
             name: "Winter Fairy Tale Resort",
-            image: "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400",
+            image: "https://i.pinimg.com/originals/0c/fd/7a/0cfd7a3a2ef10c1245d79def09a024b9.jpg",
             category: "Новогодние туры",
             description: "Уединение и магия зимы: камин, лес и тишина заснеженного парка",
             price: 189000,
@@ -12,14 +12,244 @@ const hotelsByCategory = {
             features: ["Новогодний банкет", "Дед Мороз", "Детская анимация", "Каток"]
         },
         {
-            id: 102,
+            "id": 102,
+            "name": "Alpine Star Retreat",
+            "image": "https://avatars.mds.yandex.net/i?id=98893dd5c95519d9ad3b42d94d757b7b_l-6209271-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Роскошный альпийский побег с панорамным видом на горы и частным доступом к склонам",
+            "price": 235000,
+            "stars": 5,
+            "features": ["Гастрономический рождественский ужин", "Частный инструктор по горным лыжам", "Дегустация вин", "Спа-комплекс"]
+        },
+        {
+            "id": 103,
+            "name": "Northern Lights Lodge",
+            "image": "https://i.pinimg.com/originals/3f/09/58/3f095890e53e830e94fbc145c87b9486.jpg",
+            "category": "Новогодние туры",
+            "description": "Арктическая роскошь под танцующим северным сиянием в стеклянных купольных люксах",
+            "price": 325000,
+            "stars": 5,
+            "features": ["Сервис пробуждения для наблюдения за сиянием", "Ледяной ресторан", "Сафари на хаски", "Стеклянные иглу"]
+        },
+        {
+            "id": 104,
+            "name": "Grand Frost Palace",
+            "image": "https://i.pinimg.com/736x/ae/71/91/ae7191a0f2838cbfa0584921a2699aa4.jpg",
+            "category": "Новогодние туры",
+            "description": "Величественный курорт в имперском стиле с ледяными фонтанами и королевскими празднествами",
+            "price": 275000,
+            "stars": 5,
+            "features": ["Императорский бал", "Мастер-классы по ледяным скульптурам", "Прогулки в королевской карете", "Икорный бар"]
+        },
+        {
+            "id": 105,
+            "name": "Crystal Peak Resort",
+            "image": "https://i.pinimg.com/736x/ba/48/25/ba4825ec258f8588bb2f2558043c1e2b.jpg",
+            "category": "Новогодние туры",
+            "description": "Абсолютная зимняя сказка на горной вершине с хрустальной ледяной часовней",
+            "price": 295000,
+            "stars": 5,
+            "features": ["Вершинный завтрак с шампанским", "Посещение ледяной часовни", "Вертолетные экскурсии", "Подогреваемые бассейны infinity"]
+        },
+        {
+            "id": 106,
+            "name": "Polar Night Sanctuary",
+            "image": "https://static.mk.ru/upload/entities/2024/08/13/12/articles/facebookPicture/c1/8b/ac/65/d9a86c3a2228766a6d0bc58d629bc92e.jpg",
+            "category": "Новогодние туры",
+            "description": "Эксклюзивное арктическое убежище с виллами со стеклянной крышей и полярными ночными впечатлениями",
+            "price": 385000,
+            "stars": 5,
+            "features": ["Фотосессия с северным сиянием", "Арктическая кухня", "Экспедиции на снегоходах", "Виллы со стеклянными потолками"]
+        },
+        {
+            "id": 107,
+            "name": "Emerald Frost Estate",
+            "image": "https://kuda-sochi.ru/uploads/c4c92870724cf79e49fb18bba18fa32d.jpg",
+            "category": "Новогодние туры",
+            "description": "Захватывающая дух зимняя усадьба, окруженная замерзшими изумрудными лесами и озерами",
+            "price": 255000,
+            "stars": 5,
+            "features": ["Приключения подледной рыбалки", "Мастер-классы по выживанию в лесу", "Гастрономические зимние пикники", "Отслеживание дикой природы"]
+        },
+        {
+            "id": 108,
+            "name": "Midnight Sun Castle",
+            "image": "https://avatars.mds.yandex.net/i?id=2033288125175df84521a8322979adda6c433f6c-8529854-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Сказочный опыт средневекового замка с факельными пирами и рыцарскими турнирами",
+            "price": 315000,
+            "stars": 5,
+            "features": ["Средневековый банкет", "Ледовая арена для рыцарских поединков", "Уроки стрельбы из лука", "Экскурсия по сокровищнице замка"]
+        },
+        {
+            id: 109,
             name: "Snow Queen Hotel", 
-            image: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=400",
+            image: "https://cdn.vedomosti.ru/image/2021/9n/12xd52/mobile_high-1eg7.jpg",
             category: "Новогодние туры",
             description: "Новогодняя сказка в горах с катком и горками",
             price: 145000,
-            stars: 4, // Только stars, без rating
+            stars: 4, 
             features: ["Каток", "Горки", "Новогодний ужин", "Сауна"]
+        },
+        {
+            "id": 110,
+            "name": "Mountain Frost Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=50a3e6e9b7b2174bfcb5bbbdceace48d_l-4274889-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Уютный горный отель с видом на заснеженные вершины и лесные трассы",
+            "price": 142000,
+            "stars": 4,
+            "features": ["Горные лыжи", "Терраса с камином", "Баня", "Прогулки на снегоступах"]
+        },
+        {
+            "id": 111,
+            "name": "Winter Forest Lodge",
+            "image": "https://i.pinimg.com/736x/ea/94/de/ea94de48dfe7f88f07a0f3e47cf5a915.jpg",
+            "category": "Новогодние туры",
+            "description": "Тихий отдых в сосновом лесу с домашней атмосферой и зимними забавами",
+            "price": 168000,
+            "stars": 4,
+            "features": ["Бильярд", "Настольные игры", "Каминный зал", "Зимний пикник"]
+        },
+        {
+            "id": 112,
+            "name": "Frozen Lake Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=75a9eb4146af64a9cd33dd81eaaa02ca_l-4399580-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Отель на берегу замерзшего озера для рыбалки и катания на коньках",
+            "price": 155000,
+            "stars": 4,
+            "features": ["Подледная рыбалка", "Прогулки по озеру", "Барбекю-зона", "Сауна на дровах"]
+        },
+        {
+            "id": 113,
+            "name": "Cozy Snow Inn",
+            "image": "https://vlp.by/images/NYjordan.jpg",
+            "category": "Новогодние туры",
+            "description": "Небольшой семейный отель с домашней кухней и теплой атмосферой праздника",
+            "price": 108000,
+            "stars": 4,
+            "features": ["Мастер-классы", "Домашняя кухня", "Детский клуб", "Настольный теннис"]
+        },
+        {
+            "id": 114,
+            "name": "Northern Comfort Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=9a3bca67638ace2f48c7b086f8eedb86_l-5032983-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Современный отель с панорамными окнами и доступом к зимним развлечениям",
+            "price": 155000,
+            "stars": 4,
+            "features": ["Спа-зона", "Фитнес-центр", "Бассейн", "Ресторан с панорамным видом"]
+        },
+        {
+            "id": 115,
+            "name": "Alpine Village Resort",
+            "image": "https://i.pinimg.com/736x/68/07/bb/6807bb239cf1d3617506c07f3b01ba7e.jpg",
+            "category": "Новогодние туры",
+            "description": "Деревенский стиль в альпийском духе с катком и горками для всей семьи",
+            "price": 138000,
+            "stars": 4,
+            "features": ["Семейные номера", "Украшение елок", "Новогодние игры", "Бассейн"]
+        },
+        {
+            "id": 116,
+            "name": "Iceberg Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=45194f2f046cb6d4ad42d390d268f5b90f8461d8-4509882-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Стильный дизайн-отель с ледяным баром и современными удобствами",
+            "price": 165000,
+            "stars": 4,
+            "features": ["Ледяной бар", "Дизайнерские интерьеры", "Караоке", "Боулинг"]
+        },
+        {
+            "id": 117,
+            "name": "Snow Valley Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=b820f0f03487dabc07119cc2787a81cf_l-5089285-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Отель в живописной долине с подъемником и трассами для начинающих",
+            "price": 142000,
+            "stars": 4,
+            "features": ["Ски-пасс", "Прокат оборудования", "Горные экскурсии", "Бистро у склона"]
+        },
+        {
+            "id": 118,
+            "name": "Snowy Village Inn",
+            "image": "https://avatars.mds.yandex.net/i?id=4a420092b786244cbe84ad0af81f4da2_l-12503299-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Уютный и доступный зимний отдых с традиционными празднованиями и семейными активностями",
+            "price": 89000,
+            "stars": 3,
+            "features": ["Украшение рождественской елки", "Катание с горок", "Групповые уроки катания на лыжах", "Общий камин"]
+        },
+        {
+            "id": 119,
+            "name": "Frosty Pine Lodge",
+            "image": "https://avatars.mds.yandex.net/get-altay/5485499/2a0000017ddda51fd8c1e0577fb6c4bb8f3c/orig",
+            "category": "Новогодние туры",
+            "description": "Теплый и гостеприимный отель в сосновом лесу с домашней атмосферой праздника",
+            "price": 95000,
+            "stars": 3,
+            "features": ["Новогодний ужин", "Баня", "Настольные игры", "Прогулки по зимнему лесу"]
+        },
+        {
+            "id": 120,
+            "name": "Winter Comfort Hotel",
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6550fe033c5d667dd4f35821_655102d2c2771d0295438a09/scale_1200",
+            "category": "Новогодние туры",
+            "description": "Комфортабельный отель с современными удобствами и зимними развлечениями для всей семьи",
+            "price": 110000,
+            "stars": 3,
+            "features": ["Крытый бассейн", "Детская комната", "Ресторан", "Прокат коньков"]
+        },
+        {
+            "id": 121,
+            "name": "Northern Breeze Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=548160602fcfff7ccbba17bcbeaee9d0_l-3730871-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Небольшой уютный курорт с видом на заснеженные холмы и доступом к лыжным трассам",
+            "price": 102000,
+            "stars": 3,
+            "features": ["Лыжные трассы для начинающих", "Терраса с обогревом", "Бильярд", "Чаепитие у камина"]
+        },
+        {
+            "id": 122,
+            "name": "Cozy Snow Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=ddec6b5b53d97cdf8db2beec769349e2_l-7947996-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Домашняя атмосфера и традиционные зимние забавы в семейном формате",
+            "price": 85000,
+            "stars": 3,
+            "features": ["Мастер-класс по пряникам", "Каток", "Караоке", "Настольный футбол"]
+        },
+        {
+            "id": 123,
+            "name": "Frozen Lake Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=97a0bd754b00ca4db91c86cc0f6f997c_l-5883298-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Отель на берегу замерзшего озера с возможностью подледной рыбалки и катания на коньках",
+            "price": 98000,
+            "stars": 3,
+            "features": ["Подледная рыбалка", "Прогулки по озеру", "Сауна", "Барбекю-зона"]
+        },
+        {
+            "id": 124,
+            "name": "Mountain View Lodge",
+            "image": "https://investregion174.ru/upload/resize_cache/iblock/1ef/cz8biwywa4r51otz5m5xpfysk9wt1kiq/924_560_2/a6a34a846129453153695dc99826ef3d.jpeg",
+            "category": "Новогодние туры",
+            "description": "Панорамный вид на горы и доступ к основным зимним развлечениям по доступной цене",
+            "price": 115000,
+            "stars": 3,
+            "features": ["Ски-пасс включен", "Прокат оборудования", "Горные экскурсии", "Фитнес-зал"]
+        },
+        {
+            "id": 125,
+            "name": "Winter Garden Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=06c6a5da0f3ae72da12c16c1323d9905_l-3548851-images-thumbs&n=13",
+            "category": "Новогодние туры",
+            "description": "Отель с зимним садом и уютными номерами для спокойного празднования Нового года",
+            "price": 92000,
+            "stars": 3,
+            "features": ["Зимний сад", "Библиотека", "Настольный теннис", "Тематические вечеринки"]
         }
     ],
     "Свадебные туры": [
