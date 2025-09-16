@@ -768,7 +768,158 @@ const hotelsByCategory = {
             "features": ["Вид на океан", "Общая терраса", "Снорклинг", "Рыбалка с местными"]
         }
     ],
-
+    "Морские круизы": [
+        {
+            "id": 177,
+            "name": "Royal Ocean Majesty",
+            "image": "https://i.pinimg.com/originals/92/ad/8d/92ad8dbd6de22213d5334299492e3c1a.jpg",
+            "category": "Морские круизы",
+            "description": "Флагманский лайнер премиум-класса с люксами с балконами и эксклюзивным обслуживанием",
+            "price": 850000,
+            "stars": 5,
+            "features": ["Люксы с приватными балконами", "Персональный дворецкий", "Гастрономические рестораны", "Спа-комплекс с талассотерапией"]
+        },
+        {
+            "id": 178,
+            "name": "Seven Seas Explorer",
+            "image": "https://avatars.mds.yandex.net/i?id=885f6c12d4190b492d1362d6d59fa84f60f28b3b-5876637-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Эксклюзивный круизный лайнер с suite-каютами и безлимитным премиальным алкоголем",
+            "price": 920000,
+            "stars": 5,
+            "features": ["Suite-каюты с ванными", "Безлимитный премиальный алкоголь", "Экскурсии включены", "Частная смотровая палуба"]
+        },
+        {
+            "id": 179,
+            "name": "Crystal Serenity",
+            "image": "https://avatars.mds.yandex.net/i?id=bf437cbe0e74e5efbce747bd37dd7459b1eb2a37-8312318-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Лайнер класса люкс с каютами панорамным видом и мишленовской кухней на борту",
+            "price": 780000,
+            "stars": 5,
+            "features": ["Панорамные каюты", "Ресторан с мишленовской звездой", "Бroadway шоу", "Винный погреб с сомелье"]
+        },
+        {
+            "id": 180,
+            "name": "Silver Muse",
+            "image": "https://f.otzyv.ru/f/08/07/20347/otz/t/193212/100216103656.jpg",
+            "category": "Морские круизы",
+            "description": "Круизный лайнер с почти индивидуальным обслуживанием и каютами с гидромассажными ваннами",
+            "price": 950000,
+            "stars": 5,
+            "features": ["Каюты с гидромассажными ваннами", "Соотношение персонала 1:1", "Все включено премиум", "Вертелная площадка"]
+        },
+        {
+            "id": 181,
+            "name": "Seabourn Encore",
+            "image": "https://avatars.mds.yandex.net/i?id=ff7df4af637a8f581b448ea9ed0ccd6be864fca6-12541995-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Яхта класса люкс с просторными suite и ресторанами от Томаса Келлера",
+            "price": 880000,
+            "stars": 5,
+            "features": ["Просторные сьюты", "Рестораны от знаменитого шефа", "Marina platform", "Все портовые сборы включены"]
+        },
+        {
+            "id": 182,
+            "name": "Regent Seven Seas",
+            "image": "https://i.pinimg.com/736x/18/73/4c/18734c808209c87373a195cbfaf83d96.jpg",
+            "category": "Морские круизы",
+            "description": "Круиз все включение премиум уровня с бизнес-перелетами и предкруизным отелем",
+            "price": 1100000,
+            "stars": 5,
+            "features": ["Бизнес-класс авиаперелет", "Предкруизный отель", "Экскурсии на выбор", "Бесплатный визажный сервис"]
+        },
+        {
+            "id": 183,
+            "name": "Celebrity Beyond",
+            "image": "https://th.bing.com/th?id=ORMS.b74ac3642b4d693cbda0bec50f8f838b&pid=Wdp",
+            "category": "Морские круизы",
+            "description": "Современный лайнер с каютами Infinite Veranda и инновационным дизайном",
+            "price": 420000,
+            "stars": 4,
+            "features": ["Каюты Infinite Veranda", "Спа с морской водой", "Разнообразные рестораны", "Театр West End"]
+        },
+        {
+            "id": 184,
+            "name": "Holland America",
+            "image": "https://avatars.mds.yandex.net/i?id=5dd48dd121b16ad22b94dea20018e14c_l-11540573-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Классический круиз с каютами с балконами и обширной развлекательной программой",
+            "price": 380000,
+            "stars": 4,
+            "features": ["Каюты с балконами", "Музыкальные выступления", "Кулинарные мастер-классы", "Спортивная палуба"]
+        },
+        {
+            "id": 185,
+            "name": "MSC Yacht Club",
+            "image": "https://www.ocregister.com/wp-content/uploads/2024/12/OCR-L-TR-2025-CRUISES-04.jpg?fit=620%2C9999px&ssl=1",
+            "category": "Морские круизы",
+            "description": "Корабль в корабле - приватная яхт-клуб зона с отдельным рестораном и бассейном",
+            "price": 550000,
+            "stars": 4,
+            "features": ["Приватная зона Yacht Club", "Отдельный ресторан", "Приватный бассейн", "Персональный консьерж"]
+        },
+        {
+            "id": 186,
+            "name": "Norwegian Viva",
+            "image": "https://avatars.mds.yandex.net/i?id=39b7cae5ec34ebb13322b608c0d45c198fc6ce90-10608704-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Современный лайнер с каютами The Haven и эксклюзивным доступом к зонам премиум класса",
+            "price": 490000,
+            "stars": 4,
+            "features": ["The Haven приватная зона", "Эксклюзивный ресторан", "Приватный сан-дек", "Доступ в спа первым"]
+        },
+        {
+            "id": 187,
+            "name": "Princess Cruises",
+            "image": "https://avatars.mds.yandex.net/i?id=e5b9c2f23b7c8da1bc1f8d59b0d385973177e763-5875818-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Классический круиз с Movies Under the Stars и традиционной международной кухней",
+            "price": 350000,
+            "stars": 4,
+            "features": ["Кино под открытым небом", "Международная кухня", "Традиционные танцы", "Обзорные палубы"]
+        },
+        {
+            "id": 188,
+            "name": "Costa Smeralda",
+            "image": "https://i.pinimg.com/originals/cc/c2/54/ccc2544df35cbf8e9a9ecbcd2053ee4f.jpg",
+            "category": "Морские круизы",
+            "description": "Итальянский стиль круиза с каютами с видом на море и средиземноморской кухней",
+            "price": 320000,
+            "stars": 4,
+            "features": ["Каюты с видом на море", "Итальянская кухня", "Европейский сервис", "Развлекательные шоу"]
+        },
+        {
+            "id": 189,
+            "name": "Carnival Vista",
+            "image": "https://avatars.mds.yandex.net/i?id=c02ae96c89357d60eec79dc84221708e_l-5229243-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Семейный круиз с внутренними каютами и разнообразными развлечениями для всех возрастов",
+            "price": 185000,
+            "stars": 3,
+            "features": ["Внутренние каюты", "Аквапарк на борту", "Детские клубы", "Неформальная атмосфера"]
+        },
+        {
+            "id": 190,
+            "name": "Royal Caribbean",
+            "image": "https://store.pac.ru/images/site/p640x420/45/457a6245-3c98-45ce-a949-cf7c7e686924.jpg?cc=209192888",
+            "category": "Морские круизы",
+            "description": "Бюджетный круиз с каютами без окна и базовыми развлечениями на борту",
+            "price": 150000,
+            "stars": 3,
+            "features": ["Каюты без окна", "Основные рестораны", "Базовые развлечения", "Бассейны на борту"]
+        },
+        {
+            "id": 191,
+            "name": "MSC Seashore",
+            "image": "https://avatars.mds.yandex.net/i?id=022fe81ac362300235665e0a3c75991e6d67a820-15505573-images-thumbs&n=13",
+            "category": "Морские круизы",
+            "description": "Экономный вариант круиза с простыми каютами и самообслуживанием в буфете",
+            "price": 120000,
+            "stars": 3,
+            "features": ["Простая каюта", "Питание в буфете", "Базовые активности", "Доступ к палубам"]
+        }
+    ],
 };
 
 // Названия опций
