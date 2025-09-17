@@ -1594,7 +1594,7 @@ const hotelsByCategory = {
           {
             "id": 258,
             "name": "Alpine Comfort Hut",
-            "image": "",
+            "image": "https://arkhyz24.ru/upload/iblock/9fb/9fbad2d5659e38439f90cb7b1f3d2c12.jpg",
             "category": "Горные походы",
             "description": "Комфортабельная альпийская хижина с горячим питанием и маршрутами средней сложности",
             "price": 160000,
@@ -1604,7 +1604,7 @@ const hotelsByCategory = {
           {
             "id": 259,
             "name": "Mountain Trail Hotel",
-            "image": "",
+            "image": "https://kbrria.ru/upload/iblock/d91/d911a4b37d69acfa75bcd4fea611e74a.png",
             "category": "Горные походы",
             "description": "Отель у горных троп с прокатом снаряжения и организованными групповыми походами",
             "price": 140000,
@@ -1614,7 +1614,7 @@ const hotelsByCategory = {
           {
             "id": 260,
             "name": "Summit View Lodge",
-            "image": "",
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_655b9e16b46bb1688b9f1ab0_655b9e876a195e50b2f4859d/scale_1200",
             "category": "Горные походы",
             "description": "Лодж с видами на вершины и маршрутами для начинающих альпинистов",
             "price": 150000,
@@ -1624,7 +1624,7 @@ const hotelsByCategory = {
           {
             "id": 261,
             "name": "Highland Base Camp",
-            "image": "",
+            "image": "https://get.wallhere.com/photo/China-sky-people-Sun-sunlight-mountain-hat-sunshine-sport-trekking-walking-landscapes-moving-Sony-Chinese-Tibet-mountaineering-motuo-nyingchiregion-668392.jpg",
             "category": "Горные походы",
             "description": "Базовый лагерь в высокогорье с домиками-бочками и пешими маршрутами разной сложности",
             "price": 120000,
@@ -1634,7 +1634,7 @@ const hotelsByCategory = {
           {
             "id": 262,
             "name": "Forest Mountain Hut",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=fc0e062042dbe82616cc3d7f830bb17398548a23-5192585-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Хижина в лесной зоне гор с экотропами и наблюдением за дикой природой",
             "price": 110000,
@@ -1644,7 +1644,7 @@ const hotelsByCategory = {
           {
             "id": 263,
             "name": "Valley Trekking Hostel",
-            "image": "",
+            "image": "https://risk.ru/u/img/237/236852.jpeg",
             "category": "Горные походы",
             "description": "Хостел для треккеров в долине с маршрутами по окрестным холмам и гостеприимной атмосферой",
             "price": 115000,
