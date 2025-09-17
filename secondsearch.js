@@ -1534,7 +1534,7 @@ const hotelsByCategory = {
         {
             "id": 252,
             "name": "Alpine Summit Lodge",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=1f6ae79b208778b9a14691b66ac5b733_l-4843900-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Роскошный горный приют на высоте 3000м с панорамными видами, персональными гидами и спа-зоной после восхождений",
             "price": 250000,
@@ -1544,7 +1544,7 @@ const hotelsByCategory = {
           {
             "id": 253,
             "name": "Himalayan Explorer Camp",
-            "image": "",
+            "image": "https://ruobr.ru/media/program_dod_images/5a5f07112c2248409f9adb2f2b20ec63.jpg",
             "category": "Горные походы",
             "description": "Экспедиционный лагерь премиум-класса у подножия восьмитысячников с кислородными системами и опытными шерпами",
             "price": 220000,
@@ -1554,7 +1554,7 @@ const hotelsByCategory = {
           {
             "id": 254,
             "name": "Mountain Royal Refuge",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=3ed9871eb4bfb5bf3cf41ec7dfd09ad31f70ec57-5238844-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Королевское убежище в Альпах с каминными залами, винной картой и индивидуальными маршрутами восхождений",
             "price": 180000,
@@ -1564,7 +1564,7 @@ const hotelsByCategory = {
           {
             "id": 255,
             "name": "Andean Sky Sanctuary",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=3294ffc336f437e990b3c3984de32005_l-8210080-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Высокогорный приют в Андах с акклиматизационными программами и культурными immersion турами",
             "price": 189000,
@@ -1574,7 +1574,7 @@ const hotelsByCategory = {
           {
             "id": 256,
             "name": "Rockface Adventure Base",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=4e9c8abf8b732bec1c9e025176997de7_l-9289753-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Базовый лагерь для скалолазания с тренировочными стендами, оборудованием Petzl и мастер-классами от альпинистов",
             "price": 190000,
@@ -1584,7 +1584,7 @@ const hotelsByCategory = {
           {
             "id": 257,
             "name": "Glacier Expedition Lodge",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=48215cdc41a18e05c36fcc034adcdf93_l-4907660-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Лодж для ледниковых экспедиций с оборудованием для ледолазания и гидами-гляциологами",
             "price": 175000,
