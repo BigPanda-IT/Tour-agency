@@ -1654,7 +1654,7 @@ const hotelsByCategory = {
           {
             "id": 264,
             "name": "Basic Mountain Shelter",
-            "image": "",
+            "image": "https://i.ytimg.com/vi/D3hn4E-WSiU/maxresdefault.jpg",
             "category": "Горные походы",
             "description": "Простой приют для ночевки с минимальными удобствами и доступом к воде",
             "price": 85000,
@@ -1664,7 +1664,7 @@ const hotelsByCategory = {
           {
             "id": 265,
             "name": "Wild Camping Zone",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=93118e85e94170c678c44e1560944cb4_l-8899294-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Зона для дикого кемпинга с оборудованными костровищами и базовой инфраструктурой",
             "price": 55000,
@@ -1674,7 +1674,7 @@ const hotelsByCategory = {
           {
             "id": 266,
             "name": "Mountain Bivouac",
-            "image": "",
+            "image": "https://i.pinimg.com/originals/b7/ea/70/b7ea705c8036746be5dbd571b56c4be2.jpg",
             "category": "Горные походы",
             "description": "Бивак для опытных туристов с элементарным укрытием и возможностью самостоятельных походов",
             "price": 45000,
@@ -1684,7 +1684,7 @@ const hotelsByCategory = {
           {
             "id": 267,
             "name": "Trailside Rest Stop",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=261b1bc66e5bc13940aa0df389eb5d37592210bb-10932914-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Место для отдыха на тропе с навесом от дождя и информационными стендами",
             "price": 30000,
@@ -1694,7 +1694,7 @@ const hotelsByCategory = {
           {
             "id": 268,
             "name": "Forest Campground",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=c01794b395eb49811786df41bade9465_l-5254505-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Кемпинг в лесной зоне с местами для палаток и общей кухней",
             "price": 40000,
@@ -1704,7 +1704,7 @@ const hotelsByCategory = {
           {
             "id": 269,
             "name": "Mountain Pass Hut",
-            "image": "",
+            "image": "https://avatars.mds.yandex.net/i?id=b5aac1172aa2122087cb531b451265db8aa544c6-12499804-images-thumbs&n=13",
             "category": "Горные походы",
             "description": "Простая хижина на перевале с базовым ночлегом и видом на долины",
             "price": 32000,
