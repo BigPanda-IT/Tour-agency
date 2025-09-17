@@ -1042,6 +1042,128 @@ const hotelsByCategory = {
             "features": ["Парк развлечений рядом", "Детские кроватки", "Небольшой бассейн", "Кафе с детским меню"]
         }
     ],
+    "Отдых с детьми": [
+        {
+            "id": 204,
+            "name": "Family Luxury Resort",
+            "image": "https://i.pinimg.com/736x/2f/4e/a3/2f4ea3fe8af1fa7aa809b849bee505a9.jpg",
+            "category": "Отдых с детьми",
+            "description": "Премиум курорт для семей с детьми: отдельные виллы с бассейнами, клуб нянь и развивающие программы",
+            "price": 780000,
+            "stars": 5,
+            "features": ["Семейные виллы с бассейнами", "Профессиональные няни", "Развивающие занятия", "Детское спа"]
+        },
+        {
+            "id": 205,
+            "name": "Kids Paradise Premium",
+            "image": "https://avatars.mds.yandex.net/i?id=68154f1419d804ca0af5e12b044d5ddc_l-5231808-images-thumbs&n=13",
+            "category": "Отдых с детьми",
+            "description": "Эксклюзивный семейный отель с аквапарком, мини-зоопарком и анимацией от профессиональных педагогов",
+            "price": 850000,
+            "stars": 5,
+            "features": ["Собственный аквапарк", "Мини-зоопарк", "Анимация с педагогами", "Детское меню от шефа"]
+        },
+        {
+            "id": 206,
+            "name": "Royal Family Retreat",
+            "image": "https://avatars.mds.yandex.net/i?id=8f832256335b0ca5f25d72cb2cf6b955_l-5906237-images-thumbs&n=13",
+            "category": "Отдых с детьми",
+            "description": "Королевский отдых для всей семьи: люксы с игровыми комнатами, детский дворецкий и персональные экскурсии",
+            "price": 920000,
+            "stars": 5,
+            "features": ["Люксы с игровыми комнатами", "Детский дворецкий", "Персональные экскурсии", "Гастрономия для детей"]
+        },
+        {
+            "id": 207,
+            "name": "Aqua Family World",
+            "image": "https://avatars.mds.yandex.net/i?id=60a5262d83269a15d92675c3c9355e4e_l-4872026-images-thumbs&n=13",
+            "category": "Отдых с детьми",
+            "description": "Водный мир для семей: бассейны с подогревом, водные горки всех уровней и безопасные зоны для малышей",
+            "price": 680000,
+            "stars": 5,
+            "features": ["Бассейны с подогревом", "Водные горки всех уровней", "Безопасные зоны для малышей", "Спасс-услуги для родителей"]
+        },
+        {
+            "id": 208,
+            "name": "Adventure Family Club",
+            "image": "https://avatars.mds.yandex.net/get-altay/11003990/2a0000018bc2f342068344284e96341d73f5/XXL_height",
+            "category": "Отдых с детьми",
+            "description": "Приключенческий клуб для активных семей: скалодром, веревочный парк и квесты на побережье",
+            "price": 720000,
+            "stars": 5,
+            "features": ["Скалодром для детей", "Веревочный парк", "Приключенческие квесты", "Спортивные турниры"]
+        },
+        {
+            "id": 209,
+            "name": "Eco Family Village",
+            "image": "https://cdnstatic.rg.ru/uploads/images/180/89/52/1000t.jpg",
+            "category": "Отдых с детьми",
+            "description": "Эко-деревня для семей: ферма с животными, огороды и мастер-классы по природоведению",
+            "price": 650000,
+            "stars": 5,
+            "features": ["Ферма с животными", "Детские огороды", "Природоведческие мастер-классы", "Эко-питание"]
+        },
+        {
+            "id": 210,
+            "name": "Comfort Family Hotel",
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/3484848/pub_634fd6553948ac16581e6c77_634fd6563948ac16581e6d20/scale_1200",
+            "category": "Отдых с детьми",
+            "description": "Комфортабельный отель для семей: семейные номера, детский клуб и бассейн с горками",
+            "price": 320000,
+            "stars": 4,
+            "features": ["Семейные номера", "Детский клуб", "Бассейн с горками", "Игровая площадка"]
+        },
+        {
+            "id": 211,
+            "name": "Beach Family Resort",
+            "image": "https://vestnikotradnogo.ru/sites/default/files/152693.png",
+            "category": "Отдых с детьми",
+            "description": "Пляжный курорт для семей: мелководный пляж, детские шезлонги и анимация на берегу",
+            "price": 280000,
+            "stars": 4,
+            "features": ["Мелководный пляж", "Детские шезлонги", "Пляжная анимация", "Водные развлечения"]
+        },
+        {
+            "id": 212,
+            "name": "City Family Suites",
+            "image": "https://photos.croatia-yacht-charter.com/Bavaria-41-Cruiser-New-3382_4b.jpg",
+            "category": "Отдых с детьми",
+            "description": "Семейный отель с кухней, рядом парки аттракционов и бассейны",
+            "price": 250000,
+            "stars": 4,
+            "features": ["Прогулки на яхте", "Бассейны", "Близко к морю", "Семейные скидки"]
+        },
+        {
+            "id": 213,
+            "name": "Budget Family Inn",
+            "image": "https://media.istockphoto.com/id/534576855/tr/fotoğraf/girl-holding-teddy-bear-as-trophy-in-fishing-game-in-amusement-park.jpg?s=170667a&w=0&k=20&c=lhQjB6tL6y3D7ASSNfnv5r7BrTvvbpoCrgFoWz6Ntts=",
+            "category": "Отдых с детьми",
+            "description": "Экономный вариант для семей: семейные комнаты, детская площадка и игровой парк",
+            "price": 150000,
+            "stars": 3,
+            "features": ["Семейные комнаты", "Детская площадка", "Общая кухня", "Бюджетное питание"]
+        },
+        {
+            "id": 214,
+            "name": "Sunny Family Rooms",
+            "image": "https://avatars.mds.yandex.net/i?id=bf15aeb93384594c4471af6ffed30fc6_l-5638011-images-thumbs&n=13",
+            "category": "Отдых с детьми",
+            "description": "Отель для семей: номера с дополнительными кроватями, бассейн и игровая комната",
+            "price": 170000,
+            "stars": 3,
+            "features": ["Номера с допкроватями", "Небольшой бассейн", "Игровая комната", "Завтрак включен"]
+        },
+        {
+            "id": 215,
+            "name": "Cozy Family Stay",
+            "image": "https://s8.stc.all.kpcdn.net/afisha/msk/wp-content/uploads/sites/5/2023/07/park-skazka-1.jpg",
+            "category": "Отдых с детьми",
+            "description": "Уютные апартаменты для семей: кухня, гостиная и спальня, рядом парк и кафе",
+            "price": 135000,
+            "stars": 3,
+            "features": ["Апартаменты с кухней", "Рядом детский парк", "Семейные кафе рядом", "Бесплатная парковка"]
+        }
+    ]
 };
 
 // Названия опций
