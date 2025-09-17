@@ -1849,6 +1849,37 @@ function getSelectedStars(accommodationOption) {
     return null;
 }
 
+// Функция для получения типа путешественников
+function getTravelerType(peopleOption) {
+    if (!peopleOption || !peopleOption.value) return "Не указано";
+    
+    const travelerMap = {
+        "couple": "Пара",
+        "family": "Семья", 
+        "company": "Компания"
+    };
+    
+    // Ищем соответствие в optionTitles
+    for (const [key, title] of Object.entries(optionTitles.people || {})) {
+        if (title === peopleOption.value) {
+            return travelerMap[key] || peopleOption.value;
+        }
+    }
+    
+    return peopleOption.value;
+}
+
+// Функция для получения типа отеля по звездам
+function getHotelTypeByStars(stars) {
+    const hotelTypeMap = {
+        5: "5 звезд",
+        4: "4 звезды", 
+        3: "3 звезды"
+    };
+    
+    return hotelTypeMap[stars] || `${stars}-звездочный отель`;
+}
+
 // НОВАЯ ФУНКЦИЯ - получаем значение из текста
 function getValueFromText(text, optionType) {
     // Ищем в optionTitles соответствие тексту
@@ -1885,9 +1916,6 @@ function displaySearchParams(data) {
 }
 
 
-
-
-
 function getOptionLabel(optionType) {
     const labels = {
         accommodation: "Размещение",
@@ -1899,6 +1927,7 @@ function getOptionLabel(optionType) {
     };
     return labels[optionType] || optionType;
 }
+
 
 function displayResults(hotels, searchData) {
     const resultsContainer = document.getElementById('hotels-results');
@@ -1921,7 +1950,8 @@ function displayResults(hotels, searchData) {
     let resultsHtml = '<div class="hotels-grid">';
     
     hotels.forEach((hotel) => {
-        const starsHtml = '★'.repeat(hotel.stars);
+        const travelerType = getTravelerType(searchData.options.people);
+        const hotelType = getHotelTypeByStars(hotel.stars);
         
         resultsHtml += `
             <div class="hotel-card">
@@ -1929,7 +1959,7 @@ function displayResults(hotels, searchData) {
                 
                 <div class="hotel-info">
                     <h3 class="hotel-name">${hotel.name}</h3>
-                    <div class="hotel-stars">${starsHtml}</div>
+                    <div class="hotel-stars">${'★'.repeat(hotel.stars)} ${hotel.stars} звезд</div>
                     <p class="hotel-description">${hotel.description}</p>
                     
                     <div class="hotel-features">
@@ -1948,7 +1978,7 @@ function displayResults(hotels, searchData) {
                     
                     <div class="hotel-price-section">
                         <div class="price">${hotel.price.toLocaleString('ru-RU')} руб.</div>
-                        <button class="booking-btn" data-hotel-id="${hotel.id}">Забронировать</button>
+                        <button class="book-btn" data-hotel-id="${hotel.id}">Забронировать</button>
                     </div>
                 </div>
             </div>
@@ -1960,6 +1990,7 @@ function displayResults(hotels, searchData) {
     
     setupBookingButtons();
 }
+
 
 // В конструкторе сохраняем значение опции как ключ, а не текст
 function updateGridItem(type, text, imageUrl, value) {
@@ -1997,12 +2028,39 @@ select.addEventListener('change', (e) => {
     }
 });
 
+// ОБНОВЛЕННАЯ ФУНКЦИЯ setupBookingButtons - заменить существующую
 function setupBookingButtons() {
-    document.querySelectorAll('.booking-btn').forEach(button => {
+    document.querySelectorAll('.book-btn').forEach(button => {
         button.addEventListener('click', function() {
             const hotelId = this.getAttribute('data-hotel-id');
-            alert(`Бронирование отеля ID: ${hotelId}`);
-            // Здесь можно добавить логику бронирования
+            console.log('Бронирование отеля ID:', hotelId);
+            
+            // Находим отель по ID
+            let hotelData = null;
+            for (const category in hotelsByCategory) {
+                hotelData = hotelsByCategory[category].find(h => h.id == hotelId);
+                if (hotelData) break;
+            }
+            
+            if (hotelData) {
+                // Получаем данные из конструктора
+                const constructionData = JSON.parse(sessionStorage.getItem('tourConstructionData'));
+                const travelerType = getTravelerType(constructionData.options.people);
+                const hotelType = getHotelTypeByStars(hotelData.stars);
+                
+                // Вызываем модальное окно с обновленными данными
+                showBookingModal({
+                    hotelImage: hotelData.image,
+                    hotelName: hotelData.name,
+                    hotelLocation: hotelData.description || 'Описание отеля',
+                    hotelType: hotelType,
+                    travelerType: travelerType,
+                    roomPrice: hotelData.price.toLocaleString('ru-RU') + ' руб.'
+                });
+            } else {
+                console.error('Отель не найден с ID:', hotelId);
+                alert('Ошибка: отель не найден');
+            }
         });
     });
 }
@@ -2019,42 +2077,15 @@ function showNoResults() {
 }
 
 
-
-
-
-// Функция для настройки обработчиков кнопок бронирования
-function setupBookingButtons() {
-    document.querySelectorAll('.bookingbutton').forEach(button => {
-        button.addEventListener('click', function() {
-            // Получаем информацию об отеле
-            const hotelCard = this.closest('.hotel-card');
-            const hotelName = hotelCard.querySelector('.hotel-name').textContent;
-            const hotelDescription = hotelCard.querySelector('.hotel-description').textContent;
-            const hotelImage = hotelCard.querySelector('.hotel-image').src;
-            const hotelPrice = hotelCard.querySelector('.room-price').textContent;
-            
-            // Показываем модальное окно с данными
-            showBookingModal({
-                hotelName: hotelName,
-                hotelLocation: hotelDescription, // Используем описание как местоположение
-                hotelImage: hotelImage,
-                roomType: "Стандартный номер", // Заглушка, так как в данных нет информации о номерах
-                roomPrice: hotelPrice,
-                roomDetails: "2 взрослых" // Заглушка
-            });
-        });
-    });
-}
-
 // Функция для показа модального окна
 function showBookingModal(bookingData) {
-    // Заполняем модальное окно данными
+    // Заполняем модальное окно обновленными данными
     document.getElementById('modalHotelImage').src = bookingData.hotelImage;
     document.getElementById('modalHotelImage').alt = bookingData.hotelName;
     document.getElementById('modalHotelName').textContent = bookingData.hotelName;
     document.getElementById('modalHotelLocation').textContent = bookingData.hotelLocation;
-    document.getElementById('modalRoomType').textContent = bookingData.roomType;
-    document.getElementById('modalRoomDetails').textContent = bookingData.roomDetails;
+    document.getElementById('modalRoomType').textContent = bookingData.hotelType; 
+    document.getElementById('modalRoomDetails').textContent = bookingData.travelerType; 
     document.getElementById('modalRoomPrice').textContent = bookingData.roomPrice;
     
     // Сохраняем данные о цене

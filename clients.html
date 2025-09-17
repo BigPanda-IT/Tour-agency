@@ -11,110 +11,110 @@
     <link rel="stylesheet" href="modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>О туроператоре</title>
-
-<header>
-    <div class="top-bar">
-        <div class="contacts">Контакты:</div>
-        <div class="phone">+7 (495) 646 75 85</div>
-        <div class="social-icons">
-            <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
-                <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
-            </a>
-            <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
-                <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
-            </a>
-            <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
-                <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
-            </a>
-        </div>
-
-        <!-- Модальное окно предупреждения -->
-        <div id="external-link-warning" class="warning-modal">
-            <div class="warning-content">
-                <h3>⚠️ Внимание!</h3>
-                <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
-                <p>Мы не несём ответственности за содержание внешних сайтов.</p>
-                <div class="warning-buttons">
-                    <button id="cancel-redirect">Остаться</button>
-                    <button id="confirm-redirect">Перейти</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <nav>
-        <ul class="main-menu">
-            <li><a href="index.html">Поиск тура</a></li>
-            <li><a href="countries.html">Страны</a></li>
-            <li class="active">Туристам</li>
-            <li><a href="touroperetor.html">О туроператоре</a></li>
-        </ul>
-
-        <button id="consultation-btn" class="consultation-btn">Консультация</button>
-
-        <div id="consultation-modal" class="modal">
-            <div class="modal-content">
-                <div class="nametitle">
-                    <h2 class="nameofform">Консультация</h2>
-                    <span class="close">&times;</span>
-                </div>
-                <form class="styleforform">
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <button type="submit" class="submit">Отправить</button>
-                </form>
-                <div id="success-message" style="display: none;"></div>
-            </div>
-        </div>
-        
-    </nav>
-</header>
 </head>
 <body>
-    <div class="container">
-        <h1>Соберите чемодан</h1>
-        <div class="checklist-app">
-            <h2>Что взять!?</h2>
-            <div class="items-pool" id="itemsPool">
-                <div class="item" draggable="true" id="passport" data-required>
-                    <span>📘</span> Паспорт
-                </div>
-                <div class="item" draggable="true" id="tickets">
-                    <span>✈️</span> Билеты
-                </div>
-                <div class="item" draggable="true" id="insurance" data-required>
-                    <span>🏥</span> Страховка
-                </div>
-                <div class="item" draggable="true" id="gadget">
-                    <span>📱</span> Гаджеты
-                </div>
-                <div class="item" draggable="true" id="adapter">
-                    <span>🔌</span> Адаптер
-                </div>
-                <div class="item" draggable="true" id="money">
-                    <span>💰</span> Деньги
-                </div>
+    <header>
+        <div class="top-bar">
+            <div class="contacts">Контакты:</div>
+            <div class="phone">+7 (495) 646 75 85</div>
+            <div class="social-icons">
+                <a href="#" class="icon-link warning-trigger" data-social="Viber" data-url="https://viber.me/">
+                    <img src="https://static.tildacdn.com/tild6464-6437-4262-a437-666464626162/Group_27.png" alt="Viber" class="icon pulse">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="VK" data-url="https://vk.me/">
+                    <img src="https://startkid.ru/assets/VK-b21f3e709405d409963c9f12aa2d9bc6fcb4b227e1ede665d53dcc0fed3f3825.png" alt="VK" class="icon shake">
+                </a>
+                <a href="#" class="icon-link warning-trigger" data-social="WhatsApp" data-url="https://whatsapp.me/"> 
+                    <img src="https://www.gclinic.ru/assets/gallery/2/80.png" alt="WhatsApp" class="icon float">
+                </a>
             </div>
-
-            <div class="suitcase-container">
-                <div class="suitcase" id="suitcase">
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+    
+            <!-- Модальное окно предупреждения -->
+            <div id="external-link-warning" class="warning-modal">
+                <div class="warning-content">
+                    <h3>⚠️ Внимание!</h3>
+                    <p>Вы покидаете наш сайт и переходите на страницы приложения <span id="social-name"></span>.</p>
+                    <p>Мы не несём ответственности за содержание внешних сайтов.</p>
+                    <div class="warning-buttons">
+                        <button id="cancel-redirect">Остаться</button>
+                        <button id="confirm-redirect">Перейти</button>
                     </div>
-                    <div class="suitcase-icon">🧳</div>
-                    <div class="items-counter">0/5</div>
                 </div>
-                <div class="status-message" id="statusMessage">Начните добавлять вещи</div>
             </div>
         </div>
-    </div>
+    
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html">Поиск тура</a></li>
+                <li><a href="countries.html">Страны</a></li>
+                <li class="active">Туристам</li>
+                <li><a href="touroperetor.html">О туроператоре</a></li>
+            </ul>
+    
+            <button id="consultation-btn" class="consultation-btn">Консультация</button>
+    
+            <div id="consultation-modal" class="modal">
+                <div class="modal-content">
+                    <div class="nametitle">
+                        <h2 class="nameofform">Консультация</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <form class="styleforform">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <button type="submit" class="submit">Отправить</button>
+                    </form>
+                    <div id="success-message" style="display: none;"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Соберите чемодан</h1>
+            <div class="checklist-app">
+                <h2>Что взять!?</h2>
+                <div class="items-pool" id="itemsPool">
+                    <div class="item" draggable="true" id="passport" data-required>
+                        <span>📘</span> Паспорт
+                    </div>
+                    <div class="item" draggable="true" id="tickets">
+                        <span>✈️</span> Билеты
+                    </div>
+                    <div class="item" draggable="true" id="insurance" data-required>
+                        <span>🏥</span> Страховка
+                    </div>
+                    <div class="item" draggable="true" id="gadget">
+                        <span>📱</span> Гаджеты
+                    </div>
+                    <div class="item" draggable="true" id="adapter">
+                        <span>🔌</span> Адаптер
+                    </div>
+                    <div class="item" draggable="true" id="money">
+                        <span>💰</span> Деньги
+                    </div>
+                </div>
+    
+                <div class="suitcase-container">
+                    <div class="suitcase" id="suitcase">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="suitcase-icon">🧳</div>
+                        <div class="items-counter">0/5</div>
+                    </div>
+                    <div class="status-message" id="statusMessage">Начните добавлять вещи</div>
+                </div>
+            </div>
+        </div>
+    </main>
     
     <footer>
         <div class="footer-content">

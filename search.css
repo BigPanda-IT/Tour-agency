@@ -177,8 +177,7 @@
     margin: 10px 0;
 }
 
-.book-btn,
-.bookingbutton {
+.book-btn {
     background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
     color: white;
     border: none;
@@ -188,13 +187,10 @@
     font-weight: bold;
     width: 100%;
     transition: opacity 0.3s ease;
+    margin-top: 10px;
 }
 
 .book-btn:hover {
-    opacity: 0.9;
-}
-
-.bookingbutton:hover {
     opacity: 0.9;
 }
 
