@@ -1348,6 +1348,188 @@ const hotelsByCategory = {
             "features": ["Пешие прогулки", "Пикник на природе", "Карта маршрутов", "Фото на память"]
           }
     ],
+    "Пляжный отдых": [
+        {
+            "id": 234,
+            "name": "Azure Paradise Resort",
+            "image": "https://i.pinimg.com/736x/c9/59/5e/c9595e011c35cce6ee1bbfbb6404fc98.jpg",
+            "category": "Пляжный отдых",
+            "description": "Роскошный курорт на приватном пляже с виллами над водой и персональным обслуживанием",
+            "price": 920000,
+            "stars": 5,
+            "features": ["Приватный пляж", "Виллы над водой", "Персональный батлер", "Гастрономический ресторан"]
+          },
+          {
+            "id": 235,
+            "name": "Coral Reef Luxury",
+            "image": "https://www.thenewtravels.com/wp-content/uploads/2025/06/amed-bali-tour.jpg",
+            "category": "Пляжный отдых",
+            "description": "Премиум курорт у кораллового рифа с дайвинг-центром и подводными экскурсиями",
+            "price": 780000,
+            "stars": 5,
+            "features": ["Коралловый риф", "Дайвинг-центр", "Подводные экскурсии", "Сноркелинг тур"]
+          },
+          {
+            "id": 236,
+            "name": "Royal Beach Palace",
+            "image": "https://fs.tonkosti.ru/sized/f960x960/ci/kt/cikt11a0wxwgwc08ck0o8oswk.jpg",
+            "category": "Пляжный отдых",
+            "description": "Эксклюзивный дворец на первой линии с инфнити-бассейнами и спа-комплексом рядом с океаном",
+            "price": 850000,
+            "stars": 5,
+            "features": ["Инфнити-бассейны", "Спа-комплекс", "Пляжное обслуживание", "Ресторан морепродуктов"]
+          },
+          {
+            "id": 237,
+            "name": "Sunset Bay Villas",
+            "image": "https://i.pinimg.com/originals/9a/4f/5f/9a4f5ffabe661f5b2de146641e906a82.jpg",
+            "category": "Пляжный отдых",
+            "description": "Виллы с видом на закат и приватными бассейнами на берегу океана",
+            "price": 950000,
+            "stars": 5,
+            "features": ["Вид на закат", "Приватные бассейны", "Шеф-повар на вилле", "Джакузи под открытым небом"]
+          },
+          {
+            "id": 238,
+            "name": "White Sands Retreat",
+            "image": "https://i.pinimg.com/736x/c8/55/9b/c8559b9ad29cb437141ddb3045db6e23.jpg",
+            "category": "Пляжный отдых",
+            "description": "Курорт с белоснежными пляжами и люксами с прямым выходом к океану",
+            "price": 870000,
+            "stars": 5,
+            "features": ["Белоснежный пляж", "Прямой выход к океану", "Пляжные бунгало", "Водные виды спорта"]
+          },
+          {
+            "id": 239,
+            "name": "Ocean Diamond Club",
+            "image": "https://avatars.mds.yandex.net/i?id=08bd378c183fed49a9b78a69030bcd4c_l-8259609-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Элитный пляжный клуб с эксклюзивным сервисом и развлечениями премиум-класса",
+            "price": 1100000,
+            "stars": 5,
+            "features": ["Эксклюзивный пляжный клуб", "Яхта в аренду", "Гольф-поле", "Теннисные корты"]
+          },
+          {
+            "id": 240,
+            "name": "Blue Lagoon Resort",
+            "image": "https://avatars.mds.yandex.net/i?id=83b3ed9a4d174c9a73cbd9ca04dc7f1a4c36567f-5592183-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Комфортабельный отель в лагуне с бассейнами и разнообразными водными развлечениями на побережье",
+            "price": 420000,
+            "stars": 4,
+            "features": ["Отель в лагуне", "Бассейны с горками", "Водные развлечения", "Рядом с морем"]
+          },
+          {
+            "id": 241,
+            "name": "Palm Beach Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=046b110050b0969bb0d0de56c28e8010_l-5873467-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Отель в пальмовой роще с широким пляжем и всеми удобствами для отдыха",
+            "price": 380000,
+            "stars": 4,
+            "features": ["Пальмовая роща", "Широкий пляж", "Ресторан у моря", "Спортивная площадка"]
+          },
+          {
+            "id": 242,
+            "name": "Sea Breeze Resort",
+            "image": "https://www.sixt.fr/magazine/wp-content/uploads/sites/3/2025/06/shutterstock_2488845973-1024x682.jpg",
+            "category": "Пляжный отдых",
+            "description": "Курорт с морским бризом и номерами с видом на океан",
+            "price": 350000,
+            "stars": 4,
+            "features": ["Вид на океан", "Номера с балконами", "Бар у бассейна", "Вечерние шоу"]
+          },
+          {
+            "id": 243,
+            "name": "Sunny Bay Hotel",
+            "image": "https://avatars.mds.yandex.net/i?id=ab1f38e9b9a95bb2335242ae61faabf2d8fb854d-16481072-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Отель в солнечной бухте с песчаным пляжем и водными видами спорта",
+            "price": 320000,
+            "stars": 4,
+            "features": ["Песчаный пляж", "Водные виды спорта", "Сноркелинг", "Прокат оборудования"]
+          },
+          {
+            "id": 244,
+            "name": "Coastal Comfort",
+            "image": "https://avatars.mds.yandex.net/i?id=9b1fa18a1f8851a1c7d1ee1e6451cfbe_l-5291045-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Уютный отель на побережье с комфортными номерами и домашней атмосферой",
+            "price": 290000,
+            "stars": 4,
+            "features": ["Комфортные номера", "Домашняя кухня", "Пляжные шезлонги", "Бесплатный Wi-Fi"]
+          },
+          {
+            "id": 245,
+            "name": "Marina View Hotel",
+            "image": "https://files.anextour.kz/img?url=https://files.anextour.com/Content/uploads/images/b2c/galleries/20200121_172540_43649758-2556-4cf1-9c0d-ad0e0143cde5.png&width=1024",
+            "category": "Пляжный отдых",
+            "description": "Отель с видом на марину и доступом к яхтенной стоянке",
+            "price": 310000,
+            "stars": 4,
+            "features": ["Вид на марину", "Доступ к яхтам", "Ресторан морепродуктов", "Прогулки на катере"]
+          },
+          {
+            "id": 246,
+            "name": "Beachside Inn",
+            "image": "https://avatars.dzeninfra.ru/get-zen_doc/127081/pub_5b8fc22db7677d00aae09df6_5b8fc24d1345ee00a9c4b2eb/scale_1200",
+            "category": "Пляжный отдых",
+            "description": "Отель у пляжа с базовыми удобствами и доступными ценами",
+            "price": 150000,
+            "stars": 3,
+            "features": ["Близко к пляжу", "Базовые удобства", "Общая кухня", "Парковка"]
+          },
+          {
+            "id": 247,
+            "name": "Sand Dollar Hotel",
+            "image": "https://cdn1.matadornetwork.com/blogs/1/2011/08/Navagio-Beach-Greece-shipwreck.jpeg",
+            "category": "Пляжный отдых",
+            "description": "Отель на второй линии с доступом к общественному пляжу",
+            "price": 120000,
+            "stars": 3,
+            "features": ["Доступ к пляжу", "Номера с кондиционером", "Кафе", "Прогулки к морю"]
+          },
+          {
+            "id": 248,
+            "name": "Ocean Breeze Guesthouse",
+            "image": "https://s15.stc.all.kpcdn.net/russia/wp-content/uploads/2022/08/nihat-sinan-erul-ldhJpE7fQb4-unsplash.jpg",
+            "category": "Пляжный отдых",
+            "description": "Гостевой дом с морским бризом и простыми номерами для бюджетного отдыха",
+            "price": 95000,
+            "stars": 3,
+            "features": ["Морской бриз", "Простые номера", "Общая терраса", "Завтрак включен"]
+          },
+          {
+            "id": 249,
+            "name": "Seashell Motel",
+            "image": "https://avatars.mds.yandex.net/i?id=4f3fe74a5b72745138b58cacb7da9c0f5be2a00e-14362031-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Отель у моря с удобствами для путешественников",
+            "price": 85000,
+            "stars": 3,
+            "features": ["Близко к морю", "Прогулки на яхте", "Собственный пляж", "Продуктовый магазин рядом"]
+          },
+          {
+            "id": 250,
+            "name": "Coastal Camping",
+            "image": "https://avatars.mds.yandex.net/i?id=287a035e0473656774947d036b5b89a0cdcb40fe-10897519-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Кемпинг на побережье с палатками и базовыми условиями для любителей природы",
+            "price": 55000,
+            "stars": 3,
+            "features": ["Палатки у моря", "Рыбалка", "Кострище", "Прогулки на яхте"]
+          },
+          {
+            "id": 251,
+            "name": "Bay View Hostel",
+            "image": "https://avatars.mds.yandex.net/i?id=eb144deb997cb896b217ece76fb22e17_l-4566122-images-thumbs&n=13",
+            "category": "Пляжный отдых",
+            "description": "Отель с видом на залив и общими номерами для молодежного отдыха",
+            "price": 95000,
+            "stars": 3,
+            "features": ["Вид на залив", "Общие номера", "Кухня самообслуживания", "Молодежная атмосфера"]
+          }
+    ],
 };
 
 // Названия опций
