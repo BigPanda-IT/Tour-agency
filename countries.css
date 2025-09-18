@@ -5,9 +5,9 @@
     overflow: hidden;
     margin: 20px;
     border-radius: 10px;
-  }
+}
   
-  .country-slide {
+.country-slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -16,24 +16,24 @@
     display: flex;
     opacity: 0;
     transition: opacity 0.5s ease;
-  }
-  
-  .country-slide.active {
+}
+
+.country-slide.active {
     opacity: 1;
-  }
-  
-  .country-image {
+}
+
+.country-image {
     flex: 1;
     overflow: hidden;
-  }
-  
-  .country-image img {
+}
+
+.country-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .country-info {
+}
+
+.country-info {
     flex: 1;
     padding-right: 40px;
     padding-top: 20px;
@@ -42,23 +42,23 @@
     flex-direction: column;
     justify-content: center;
     background: white;
-  }
-  
-  .country-info h2 {
+}
+
+.country-info h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #070707;
     padding-bottom: 15px;
-  }
-  
-  .country-info p {
+}
+
+.country-info p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 30px;
     color: #0b0235;
-  }
-  
-  .btn {
+}
+
+.btn {
     display: inline-block;
     padding: 12px 25px;
     background: #0066cc;
@@ -66,9 +66,9 @@
     text-decoration: none;
     border-radius: 5px;
     width: fit-content;
-  }
-  
-  .carousel-prev, .carousel-next {
+}
+
+.carousel-prev, .carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -78,15 +78,15 @@
     cursor: pointer;
     padding: 10px 15px;
     z-index: 10;
-  }
-  
-  .carousel-prev {
+}
+
+.carousel-prev {
     left: 20px;
-  }
-  
-  .carousel-next {
+}
+
+.carousel-next {
     right: 20px;
-  }
+}
 
 .stylesbtn{
     display: flex;
@@ -95,45 +95,30 @@
 
 .btn-border-glow {
     position: relative;
-    overflow: hidden;
     font-size: 16px;
     padding: 8px;
     background-color: rgb(110, 135, 248);
     border: none;
     border-radius: 10px;
     color: white;
+}
 
-  }
-  
-  .btn-border-glow::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff);
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    animation: glow 8s linear infinite;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .btn-border-glow:hover::after {
-    opacity: 1;
-  }
-  
-  @keyframes glow {
-    0% { background-position: 0 0; }
-    100% { background-position: 400% 0; }
-  }
+.btn-border-glow:hover {
+    background-position: right center;
+    animation: glow 2s infinite;
+}
 
-  @media (max-width: 768px) {
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(52, 85, 233, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(13, 39, 151, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(10, 19, 56, 0.5); }
+}
+
+@media (max-width: 768px) {
     .country-slide {
         flex-direction: column;
     }
+
     .country-image, .country-info {
         flex: none;
         width: 100%;

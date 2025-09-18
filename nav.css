@@ -6,6 +6,7 @@
 .main-menu a {
     text-decoration: none; 
 }
+
 .icon {
     width: 24px;
     height: 24px;
@@ -22,7 +23,7 @@
     100% { transform: scale(1); }
 }
 
-.shake{
+.shake { 
     animation: shake 0.5s infinite;
 }
 
