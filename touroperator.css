@@ -56,7 +56,7 @@
     50% { transform: translateY(-10px); }
 }
 
-/* Бегущие чемоданы */
+/* Бегущие фоточки */
 .suitcases {
     background-color: #26e7ce;
     padding: 30px 0;
@@ -106,16 +106,6 @@
     cursor: pointer;
 }
 
-.imgballon{
-    width: 300px;
-    height: 300px;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    overflow: hidden;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
-
-}
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }

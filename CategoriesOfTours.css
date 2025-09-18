@@ -77,6 +77,14 @@
     flex-shrink: 0;
 }
 
+.moving-strip.animated {
+    animation: moveStrip 30s linear infinite;
+}
+
+.moving-strip.paused {
+    animation-play-state: paused;
+}
+
 /* Анимация движения ленты */
 @keyframes moveStrip {
     0% {
@@ -85,14 +93,6 @@
     100% {
         transform: translateX(-50%);
     }
-}
-
-.moving-strip.animated {
-    animation: moveStrip 30s linear infinite;
-}
-
-.moving-strip.paused {
-    animation-play-state: paused;
 }
 
 .modal-footer {
@@ -114,7 +114,6 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 .details-button:hover {

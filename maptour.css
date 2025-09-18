@@ -160,8 +160,6 @@ button {
     background: #2c48c2;
 }
 
-
-
 /* Адаптивность */
 @media (max-width: 768px) {
     .constructor-wrapper {

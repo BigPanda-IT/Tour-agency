@@ -6,24 +6,29 @@
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+
 .confirmation-header {
     text-align: center;
     color: #28a745;
     font-size: 16px;
 }
+
 .confirmation-details {
     margin: 25px 0;
 }
+
 .confirmation-details p {
     margin: 6px 0;
     border-bottom: 1px solid #eee;
 }
+
 .confirmation-footer {
     margin-top: 15px;
     padding-top: 12px;
     border-top: 2px solid #28a745;
     color: #666;
 }
+
 .print-btn {
     padding: 12px 25px;
     background: #28a745;
@@ -53,7 +58,6 @@
         width: 100% !important;
     }
     
-    /* Уменьшаем заголовок */
     .confirmation-header h1 {
         font-size: 18pt !important; 
         color: black !important; 
@@ -61,7 +65,6 @@
         margin-bottom: 10px !important;
     }
     
-    /* Контейнер для печати */
     .confirmation-container {
         box-shadow: none !important;
         border: 1px solid #000 !important;
@@ -76,7 +79,7 @@
         background: white !important;
     }
     
-    /* Улучшаем читаемость текста */
+    /* Импрувинг читаемости текста */
     .confirmation-details p {
         font-size: 11pt !important;
         margin: 8px 0 !important;
