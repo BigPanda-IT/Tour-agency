@@ -47,15 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     async function changeCountry() {
-    titleElement.classList.add("fade-out");
-    await new Promise(resolve => setTimeout(resolve, 700));
-    currentIndex = (currentIndex + 1) % countries.length;
-    titleElement.textContent = countries[currentIndex];
-    titleElement.classList.remove("fade-out");
-    titleElement.classList.add("fade-in");
-    setTimeout(() => {
-        titleElement.classList.remove("fade-in");
-    }, 700);
+        titleElement.classList.add("fade-out");
+        await new Promise(resolve => setTimeout(resolve, 700));
+        currentIndex = (currentIndex + 1) % countries.length;
+        titleElement.textContent = countries[currentIndex];
+        titleElement.classList.remove("fade-out");
+        titleElement.classList.add("fade-in");
+        setTimeout(() => {
+            titleElement.classList.remove("fade-in");
+        }, 700);
     }
     setInterval(changeCountry, 2000);
     setTimeout(changeCountry, 2000);

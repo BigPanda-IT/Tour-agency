@@ -1959,7 +1959,7 @@ function displayResults(hotels, searchData) {
                 
                 <div class="hotel-info">
                     <h3 class="hotel-name">${hotel.name}</h3>
-                    <div class="hotel-stars">${'★'.repeat(hotel.stars)} ${hotel.stars} звезд</div>
+                    <div class="hotel-stars">${'★'.repeat(hotel.stars)}</div>
                     <p class="hotel-description">${hotel.description}</p>
                     
                     <div class="hotel-features">
@@ -2014,20 +2014,6 @@ function updateGridItem(type, text, imageUrl, value) {
     }
 }
 
-// В обработчике селектов:
-select.addEventListener('change', (e) => {
-    const selectId = e.target.id;
-    const selectedOption = e.target.options[e.target.selectedIndex];
-    const value = selectedOption.value; // Ключ значения
-    const text = selectedOption.textContent; // Текст для отображения
-    const imageUrl = selectedOption.getAttribute('data-image');
-    const type = selectMapping[selectId];
-    
-    if (value && imageUrl) {
-        updateGridItem(type, text, imageUrl, value);
-    }
-});
-
 // ОБНОВЛЕННАЯ ФУНКЦИЯ setupBookingButtons - заменить существующую
 function setupBookingButtons() {
     document.querySelectorAll('.book-btn').forEach(button => {
@@ -2076,6 +2062,7 @@ function showNoResults() {
     `;
 }
 
+let lastBookingData = null;
 
 // Функция для показа модального окна
 function showBookingModal(bookingData) {
@@ -2101,6 +2088,7 @@ function showBookingModal(bookingData) {
 
 // Функция для закрытия модального окна
 function closeBookingModal() {
+    console.log('Закрытие первого модального окна');
     const modal = document.getElementById('bookingModal');
     if (modal) {
         modal.style.display = 'none';
@@ -2108,12 +2096,13 @@ function closeBookingModal() {
     }
 }
 
-
+// Обработчик формы бронирования
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
+            console.log('Форма отправлена, начинаю обработку...');
             
             const formData = new FormData(this);
             const bookingData = {
@@ -2127,44 +2116,68 @@ document.addEventListener('DOMContentLoaded', function() {
                 comments: formData.get('comments')
             };
             
+            console.log('Данные из формы:', bookingData);
+            
             // Переходим ко второму модальному окну
             goToSecondModal(bookingData);
         });
     }
+    
+    // Настраиваем кнопки бронирования после загрузки контента
+    setTimeout(() => {
+        setupBookingButtons();
+    }, 500);
 });
 
-
-function goToSecondModal() {
-    // Собираем данные формы вручную
-    const bookingData = {
-        lastName: document.getElementById('lastName').value,
-        firstName: document.getElementById('firstName').value,
-        middleName: document.getElementById('middleName').value,
-        birthDate: document.getElementById('birthDate').value,
-        passportNumber: document.getElementById('passportNumber').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        comments: document.getElementById('comments').value
-    };
-    
-    console.log('Собранные данные:', bookingData);
-    
-    // Заполняем второе модальное окно
+// Функция для перехода ко второму модальному окну
+function goToSecondModal(bookingData) {
+    // Формируем ФИО из данных
     const fio = `${bookingData.lastName} ${bookingData.firstName} ${bookingData.middleName || ''}`.trim();
-    document.getElementById('confirmFio').value = fio;
-    document.getElementById('confirmEmail').value = bookingData.email;
     
-    // Закрываем первое и открываем второе
+    // Заполняем данные во втором модальном окне
+    console.log('2. Ищу элементы confirmFio и confirmEmail');
+    const fioInput = document.getElementById('confirmFio');
+    const emailInput = document.getElementById('confirmEmail');
+    
+    if (fioInput) {
+        fioInput.value = fio;
+        console.log('4. ФИО установлено:', fio);
+    } else {
+        console.error('ERROR: Элемент confirmFio не найден!');
+        return; // Прерываем выполнение если элементы не найдены
+    }
+    
+    if (emailInput) {
+        emailInput.value = bookingData.email;
+        console.log('5. Email установлен:', bookingData.email);
+    } else {
+        console.error('ERROR: Элемент confirmEmail не найден!');
+        return;
+    }
+
     closeBookingModal();
     showSecondModal();
 }
 
 // Функция для показа второго модального окна
 function showSecondModal() {
+    console.log('8. showSecondModal вызвана');
     const modal = document.getElementById('secondModal');
+    
     if (modal) {
+        console.log('9. Второе модальное окно найдено');
+        console.log('10. Текущий display:', modal.style.display);
+        
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        
+        console.log('11. Модальное окно должно быть видно');
+        console.log('12. Новый display:', modal.style.display);
+    } else {
+        console.error('ERROR: Второе модальное окно (secondModal) не найдено!');
+        // Проверим все элементы с классом modal-overlay
+        const allModals = document.querySelectorAll('.modal-overlay');
+        console.log('Все модальные окна на странице:', allModals);
     }
 }
 
