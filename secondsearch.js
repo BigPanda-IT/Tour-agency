@@ -2108,12 +2108,12 @@ function closeBookingModal() {
     }
 }
 
-// Обработчик формы бронирования
+
 document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); 
             
             const formData = new FormData(this);
             const bookingData = {
@@ -2131,23 +2131,30 @@ document.addEventListener('DOMContentLoaded', function() {
             goToSecondModal(bookingData);
         });
     }
-    
-    // Настраиваем кнопки бронирования после загрузки контента
-    setTimeout(() => {
-        setupBookingButtons();
-    }, 500);
 });
 
-// Функция для перехода ко второму модальному окну
-function goToSecondModal(bookingData) {
-    // Формируем ФИО из данных
-    const fio = `${bookingData.lastName} ${bookingData.firstName} ${bookingData.middleName || ''}`.trim();
+
+function goToSecondModal() {
+    // Собираем данные формы вручную
+    const bookingData = {
+        lastName: document.getElementById('lastName').value,
+        firstName: document.getElementById('firstName').value,
+        middleName: document.getElementById('middleName').value,
+        birthDate: document.getElementById('birthDate').value,
+        passportNumber: document.getElementById('passportNumber').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        comments: document.getElementById('comments').value
+    };
     
-    // Заполняем данные во втором модальном окне
+    console.log('Собранные данные:', bookingData);
+    
+    // Заполняем второе модальное окно
+    const fio = `${bookingData.lastName} ${bookingData.firstName} ${bookingData.middleName || ''}`.trim();
     document.getElementById('confirmFio').value = fio;
     document.getElementById('confirmEmail').value = bookingData.email;
     
-    // Закрываем первое и открываем второе модальное окно
+    // Закрываем первое и открываем второе
     closeBookingModal();
     showSecondModal();
 }
