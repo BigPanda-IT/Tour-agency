@@ -1,6 +1,6 @@
 // БД для категорий
 const tourData = {
-    "Новогодние туры": {
+    "🎄 Новогодние туры": {
         images: [
             "https://i.pinimg.com/736x/3c/00/57/3c0057686798689d8ca4ddcb787a1df8.jpg",
             "https://avatars.mds.yandex.net/i?id=4f2decfb0782017c77ec20945612821e_l-7863844-images-thumbs&n=13",
@@ -10,7 +10,7 @@ const tourData = {
         description: "Встретьте Новый год в сказочной обстановке! Незабываемая атмосфера праздника и волшебства.",
         link: "categtour.html"
     },
-    "Свадебные туры": {
+    "💍 Свадебные туры": {
         images: [
             "https://avatars.mds.yandex.net/i?id=0be22ffdce409b12ea14689f5f0360fc_l-9211785-images-thumbs&n=13",
             "https://avatars.mds.yandex.net/i?id=f34d8115dcb61bb232777446bfbae1c4_l-4819109-images-thumbs&n=13",
@@ -20,7 +20,7 @@ const tourData = {
         description: "Идеальный медовый месяц в романтических уголках мира. Создайте memories на всю жизнь.",
         link: "categtour.html"
     },
-    "VIP-туры и услуги": {
+    "👑 VIP-туры и услуги": {
         images: [
             "https://avatars.mds.yandex.net/i?id=36c7cb75e815d771f4ee2dbc8182c7b5_l-16349001-images-thumbs&n=13",
             "https://i.pinimg.com/originals/3e/f0/fd/3ef0fd174dc4c65e41759d90d820f3e2.jpg",
@@ -30,7 +30,7 @@ const tourData = {
         description: "Эксклюзивный отдых по высшему разряду. Персональный подход и премиум-сервис.",
         link: "categtour.html"
     },
-    "Отдых на островах": {
+    "🌴 Отдых на островах": {
         images: [
             "https://i.pinimg.com/736x/bb/18/f2/bb18f23af7c1cc8a73c3a51da89c0e99.jpg",
             "https://i.pinimg.com/736x/12/c0/4e/12c04ebef9139052794e664ffa915af4.jpg",
@@ -40,7 +40,7 @@ const tourData = {
         description: "Райские острова с кристально чистой водой и белоснежными пляжами. Идеальный escape от городской суеты.",
         link: "categtour.html"
     },
-    "Морские круизы": {
+    "🚢 Морские круизы": {
         images: [
             "https://avatars.mds.yandex.net/i?id=d35ed591b359f1acbec0c70d79288b8277e44708-10853576-images-thumbs&n=13",
             "https://i.pinimg.com/originals/92/ad/8d/92ad8dbd6de22213d5334299492e3c1a.jpg",
@@ -50,7 +50,7 @@ const tourData = {
         description: "Незабываемые путешествия по морям и океанам. Все включено на роскошных лайнерах.",
         link: "categtour.html"
     },
-    "Детский отдых": {
+    "🧸 Детский отдых": {
         images: [
             "https://avatars.mds.yandex.net/i?id=aa21d24c206fd7a528bc1d29dbfe151d3ac1ea54-4988309-images-thumbs&n=13",
             "https://i.pinimg.com/736x/ad/c5/f0/adc5f0487a83caba793c1c4337fe924d.jpg",
@@ -60,7 +60,7 @@ const tourData = {
         description: "Специальные программы для детей с анимацией, квестами и развивающими занятиями.",
         link: "categtour.html"
     },
-    "Отдых с детьми": {
+    "👨‍👩‍👧‍👦 Отдых с детьми": {
         images: [
             "https://avatars.mds.yandex.net/i?id=8f832256335b0ca5f25d72cb2cf6b955_l-5906237-images-thumbs&n=13",
             "https://avatars.mds.yandex.net/i?id=4d0098815114bc21650e6994b7aa7c7f_l-11846045-images-thumbs&n=13",
@@ -70,7 +70,7 @@ const tourData = {
         description: "Комфортный семейный отдых с продуманной инфраструктурой и развлечениями для всех возрастов.",
         link: "categtour.html"
     },
-    "Корпоративный отдых": {
+    "🏢 Корпоративы": {
         images: [
             "https://avatars.mds.yandex.net/i?id=0aa672c36f98897489ffda5da2d20f10_l-5232882-images-thumbs&n=13",
             "https://avatars.mds.yandex.net/i?id=71851defdff3300d2d12687608192d41_l-4080605-images-thumbs&n=13",
@@ -80,7 +80,7 @@ const tourData = {
         description: "Тимбилдинги, бизнес-тренинги и мотивационные поездки для вашей команды.",
         link: "categtour.html"
     },
-    "Экскурсионные туры": {
+    "🏛️ Экскурсии": {
         images: [
             "https://avatars.mds.yandex.net/i?id=432836284196d58119d03e805bce0980_l-3006166-images-thumbs&n=13",
             "https://grand-auto.by/images/news/290/2049.jpg",
@@ -90,7 +90,7 @@ const tourData = {
         description: "Погружение в культуру и историю самых fascinating мест планеты с профессиональными гидами.",
         link: "categtour.html"
     },
-    "Пляжный отдых": {
+    "🏖️ Пляжный отдых": {
         images: [
             "https://avatars.mds.yandex.net/i?id=c16399a90aa9059b87314bde642601b0_l-4406391-images-thumbs&n=13",
             "https://i.pinimg.com/736x/46/62/e7/4662e725ae23b5045df3b1ee130e6e40.jpg",
@@ -100,7 +100,7 @@ const tourData = {
         description: "Идеальные пляжи, лазурное море и релакс под шум прибоя. Ваш perfect getaway.",
         link: "categtour.html"
     },
-    "Горные походы": {
+    "⛰️ Горные походы": {
         images: [
             "https://avatars.mds.yandex.net/i?id=f5da8dff2a18c66dcd049bcea53298b2_l-5236662-images-thumbs&n=13",
             "https://sun9-79.userapi.com/impf/c831408/v831408748/1ce150/uZgzTnno8pA.jpg?size=807x538&quality=96&sign=eaf7e78ba506f5cc10cb63f52c1a4213&c_uniq_tag=zv9jdTi6WOO54S8hKHBrUmyrp5MoNQySa8rGe-U0MVI&type=album",
