@@ -85,7 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         progressFill.style.width = `${percentage}%`;
         itemsCounter.textContent = `${packedItems}/${totalItems}`;
 
-        if (percentage < 50) {
+        if (percentage == 0) {
+            statusMessage.textContent = 'Начните добавлять вещи!';
+        }
+        else if (percentage < 50) {
             progressFill.style.background = '#e74c3c';
             statusMessage.textContent = 'Собирайтесь активнее!';
         } else if (percentage < 100) {
