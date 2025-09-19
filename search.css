@@ -218,6 +218,17 @@
     margin-top: 15px;
 }
 
+.selected-options h4 {
+    margin-bottom: 8px;
+}
+
+.price {
+    color:#07295c;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 
 
 

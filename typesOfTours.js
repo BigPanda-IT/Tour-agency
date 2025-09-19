@@ -43,9 +43,9 @@ const tourData = {
     "🚢 Морские круизы": {
         images: [
             "https://avatars.mds.yandex.net/i?id=d35ed591b359f1acbec0c70d79288b8277e44708-10853576-images-thumbs&n=13",
-            "https://i.pinimg.com/originals/92/ad/8d/92ad8dbd6de22213d5334299492e3c1a.jpg",
-            "https://avatars.mds.yandex.net/i?id=f300db2d2bc7a88702ed3a630be92c9e_l-5192545-images-thumbs&n=13",
-            "https://avatars.mds.yandex.net/i?id=1007f59c6078b982fba7586604df3f86_l-5256019-images-thumbs&n=13"
+            "https://avatars.mds.yandex.net/get-altay/13994056/2a000001948c64e0b00012d78a11f50a0f55/orig",
+            "https://avatars.mds.yandex.net/i?id=1007f59c6078b982fba7586604df3f86_l-5256019-images-thumbs&n=13",
+            "https://avatars.mds.yandex.net/i?id=f300db2d2bc7a88702ed3a630be92c9e_l-5192545-images-thumbs&n=13"
         ],
         description: "Незабываемые путешествия по морям и океанам. Все включено на роскошных лайнерах.",
         link: "categtour.html"
