@@ -24,12 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.dataTransfer.effectAllowed = 'move';
     }
 
-    function handleDragStart(e) {
-        this.classList.add('dragging');
-        e.dataTransfer.setData('text/plain', this.id);
-        e.dataTransfer.effectAllowed = 'move';
-    }
-
     function handleDragEnd() {
         this.classList.remove('dragging');
     }
@@ -125,10 +119,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
     updateProgress();
 });
-
-function confetti(options) {
-    console.log('Confetti effect would trigger here');
-}
