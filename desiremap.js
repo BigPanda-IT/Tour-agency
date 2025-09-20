@@ -215,7 +215,7 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     
     const tourData = {
         category: currentCategory,
-        options: selectedOptions, // Сохраняем ВСЕ selectedOptions
+        options: filteredOptions,
         timestamp: new Date().getTime()
     };
     
