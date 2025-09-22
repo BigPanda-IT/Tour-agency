@@ -8,7 +8,7 @@ const hotelsByCategory = {
             category: "Новогодние туры",
             description: "Уединение и магия зимы: камин, лес и тишина заснеженного парка",
             price: 189000,
-            stars: 5, // Только stars, без rating
+            stars: 5, 
             features: ["Новогодний банкет", "Дед Мороз", "Детская анимация", "Каток", "Новогодняя фотосессия"]
         },
         {
@@ -1747,47 +1747,14 @@ const optionTitles = {
     }
 };
 
-// ОТЛАДОЧНАЯ ФУНКЦИЯ - добавьте в начало
-function debugData() {
-    console.log('=== ДЕБАГ ДАННЫХ ===');
-    
-    // Проверяем sessionStorage
-    const storedData = sessionStorage.getItem('tourConstructionData');
-    console.log('Данные в sessionStorage:', storedData);
-    
-    if (storedData) {
-        const parsedData = JSON.parse(storedData);
-        console.log('Parsed data:', parsedData);
-        
-        // Проверяем структуру отелей
-        console.log('Категории отелей:', Object.keys(hotelsByCategory));
-        for (const category in hotelsByCategory) {
-            console.log(`Отели в "${category}":`, hotelsByCategory[category].length);
-            if (hotelsByCategory[category].length > 0) {
-                console.log('Первый отель:', hotelsByCategory[category][0]);
-            }
-        }
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Страница results.html загружена');
-    
-    // Запускаем отладку
-    debugData();
     
     const constructionData = JSON.parse(sessionStorage.getItem('tourConstructionData'));
     console.log('Данные из конструктора:', constructionData);
     
     if (!constructionData) {
         console.error('Данные не найдены в sessionStorage!');
-        showNoResults();
-        return;
-    }
-
-    // ДОБАВЬТЕ ПРОВЕРКУ СТРУКТУРЫ ДАННЫХ
-    if (!constructionData.category || !constructionData.options) {
-        console.error('Неверная структура данных:', constructionData);
         showNoResults();
         return;
     }
@@ -1808,7 +1775,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function findSuitableHotels(data) {
-    console.log('=== ФИЛЬТРАЦИЯ ОТЕЛЕЙ ===');
     const category = data.category;
     const selectedStars = getSelectedStars(data.options.accommodation);
     
@@ -1845,7 +1811,6 @@ function getSelectedStars(accommodationOption) {
             return starMap[key];
         }
     }
-    
     return null;
 }
 
@@ -1865,7 +1830,6 @@ function getTravelerType(peopleOption) {
             return travelerMap[key] || peopleOption.value;
         }
     }
-    
     return peopleOption.value;
 }
 
@@ -1876,11 +1840,10 @@ function getHotelTypeByStars(stars) {
         4: "4 звезды", 
         3: "3 звезды"
     };
-    
     return hotelTypeMap[stars] || `${stars}-звездочный отель`;
 }
 
-// НОВАЯ ФУНКЦИЯ - получаем значение из текста
+// Получаем значение из текста
 function getValueFromText(text, optionType) {
     // Ищем в optionTitles соответствие тексту
     for (const [value, title] of Object.entries(optionTitles[optionType] || {})) {
@@ -1891,7 +1854,6 @@ function getValueFromText(text, optionType) {
     return text; // Если не нашли, возвращаем как есть
 }
 
-// Исправленная функция displaySearchParams
 function displaySearchParams(data) {
     const paramsContainer = document.getElementById('search-params');
     
@@ -1903,7 +1865,6 @@ function displaySearchParams(data) {
     
     Object.entries(data.options).forEach(([optionType, optionData]) => {
         if (optionData && optionData.value) {
-            // Используем значение как есть (уже человекочитаемое)
             paramsHtml += `
                 <div class="param-item">
                     <strong>${getOptionLabel(optionType)}:</strong> ${optionData.value}
@@ -1911,10 +1872,8 @@ function displaySearchParams(data) {
             `;
         }
     });
-    
     paramsContainer.innerHTML = paramsHtml;
 }
-
 
 function getOptionLabel(optionType) {
     const labels = {
@@ -1927,7 +1886,6 @@ function getOptionLabel(optionType) {
     };
     return labels[optionType] || optionType;
 }
-
 
 function displayResults(hotels, searchData) {
     const resultsContainer = document.getElementById('hotels-results');
@@ -2014,7 +1972,6 @@ function updateGridItem(type, text, imageUrl, value) {
     }
 }
 
-// ОБНОВЛЕННАЯ ФУНКЦИЯ setupBookingButtons - заменить существующую
 function setupBookingButtons() {
     document.querySelectorAll('.book-btn').forEach(button => {
         button.addEventListener('click', function() {
@@ -2135,50 +2092,36 @@ function goToSecondModal(bookingData) {
     const fio = `${bookingData.lastName} ${bookingData.firstName} ${bookingData.middleName || ''}`.trim();
     
     // Заполняем данные во втором модальном окне
-    console.log('2. Ищу элементы confirmFio и confirmEmail');
     const fioInput = document.getElementById('confirmFio');
     const emailInput = document.getElementById('confirmEmail');
     
     if (fioInput) {
         fioInput.value = fio;
-        console.log('4. ФИО установлено:', fio);
+        console.log('ФИО установлено:', fio);
     } else {
-        console.error('ERROR: Элемент confirmFio не найден!');
+        console.error('Элемент confirmFio не найден!');
         return; // Прерываем выполнение если элементы не найдены
     }
     
     if (emailInput) {
         emailInput.value = bookingData.email;
-        console.log('5. Email установлен:', bookingData.email);
+        console.log('Email установлен:', bookingData.email);
     } else {
         console.error('ERROR: Элемент confirmEmail не найден!');
         return;
     }
-
     closeBookingModal();
     showSecondModal();
 }
 
 // Функция для показа второго модального окна
 function showSecondModal() {
-    console.log('8. showSecondModal вызвана');
     const modal = document.getElementById('secondModal');
     
     if (modal) {
-        console.log('9. Второе модальное окно найдено');
-        console.log('10. Текущий display:', modal.style.display);
-        
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        
-        console.log('11. Модальное окно должно быть видно');
-        console.log('12. Новый display:', modal.style.display);
-    } else {
-        console.error('ERROR: Второе модальное окно (secondModal) не найдено!');
-        // Проверим все элементы с классом modal-overlay
-        const allModals = document.querySelectorAll('.modal-overlay');
-        console.log('Все модальные окна на странице:', allModals);
-    }
+    } 
 }
 
 // Функция для закрытия второго модального окна
@@ -2189,7 +2132,6 @@ function closeSecondModal() {
         document.body.style.overflow = '';
     }
 }
-
 
 // Функция для показа модального окна с наличной оплатой
 function showCashModal() {
@@ -2214,21 +2156,20 @@ function closeCashModal() {
 }
 
 function printBooking() {
-    // Сохраняем данные в sessionStorage
     const bookingData = {
         hotelName: document.getElementById('modalHotelName').textContent,
         roomType: document.getElementById('modalRoomType').textContent,
         amount: window.paymentAmount,
         date: new Date().toLocaleDateString('ru-RU')
     };
-    
+    // Сохраняем данные в sessionStorage
     sessionStorage.setItem('bookingData', JSON.stringify(bookingData));
     
-    // Открываем страницу cashpayment.html
+    // Открываем страницу 
     window.open('cashpayment.html', '_blank');
 }
 
-// Функция для завершения бронирования (существующая функция)
+// Функция для завершения бронирования 
 function completeBooking() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     if (paymentMethod === 'card') {
@@ -2244,7 +2185,6 @@ function completeBooking() {
 function goToCashModal() {
     // Закрываем текущее модальное окно
     closeSecondModal();
-    
     // Показываем модальное окно с наличной оплатой
     showCashModal();
 }
@@ -2260,7 +2200,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
     // Закрытие по Escape
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
