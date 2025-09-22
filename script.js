@@ -39,9 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     });
 
-
-    
-
     const countries = ["ШРИ-ЛАНКА", "ТАИЛАНД", "СЕЙШЕЛЫ", "МАЛЬДИВЫ", "ВЬЕТНАМ", "ТУРЦИЯ", "ОАЭ", "ЕГИПЕТ", "КУБА"];
     const titleElement = document.getElementById("country-title");
     let currentIndex = 0;
