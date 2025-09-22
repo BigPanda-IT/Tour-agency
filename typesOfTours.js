@@ -113,8 +113,6 @@ const tourData = {
 
 };
 
-
-
 // Элементы DOM
 const modal = document.getElementById('tourModal');
 const modalTitle = document.getElementById('modalTitle');
